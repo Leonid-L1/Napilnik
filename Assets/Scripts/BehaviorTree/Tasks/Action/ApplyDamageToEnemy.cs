@@ -1,0 +1,1 @@
+public class ApplyDamageToEnemy : ApplyDamage<Enemy, SharedEnemy> { }

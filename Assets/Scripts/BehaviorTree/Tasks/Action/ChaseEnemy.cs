@@ -1,0 +1,1 @@
+public class ChaseEnemy : Chase<Enemy, SharedEnemy> { }

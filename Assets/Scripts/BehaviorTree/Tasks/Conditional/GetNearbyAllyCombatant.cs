@@ -1,0 +1,1 @@
+public class GetNearbyAllyCombatant : GetNearbyObject<AllyCombatant, SharedAllyCombatant> { }

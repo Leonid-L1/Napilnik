@@ -1,0 +1,1 @@
+public class AttackEnemy : Attack<Enemy, SharedEnemy> { }
