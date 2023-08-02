@@ -11,6 +11,7 @@ public class SettingsPanelModel
     private const string English = "English";
     private const string Russian = "Russian";
     private const string Turkish = "Turkish";
+    private const float DedaultValue = 0.75f;
 
     private List<string> _languages = new List<string>() { English, Russian, Turkish };
     private int _currentLanguageIndex;
@@ -61,10 +62,10 @@ public class SettingsPanelModel
     private void SetStartVolume()
     {
         if (PlayerPrefs.HasKey(MusicVolume) == false)
-            PlayerPrefs.SetFloat(MusicVolume, 0.75f);
+            PlayerPrefs.SetFloat(MusicVolume, DedaultValue);
 
         if (PlayerPrefs.HasKey(EffectsVolume) == false)
-            PlayerPrefs.SetFloat(EffectsVolume, 0.75f);
+            PlayerPrefs.SetFloat(EffectsVolume, DedaultValue);
 
         _mixer.audioMixer.SetFloat(MusicVolume, MathF.Log10(PlayerPrefs.GetFloat(MusicVolume)) * _logarithmicMultiplicator);
         _mixer.audioMixer.SetFloat(EffectsVolume, MathF.Log10(PlayerPrefs.GetFloat(EffectsVolume)) * _logarithmicMultiplicator);

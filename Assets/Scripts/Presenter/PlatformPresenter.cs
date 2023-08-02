@@ -25,7 +25,6 @@ public class PlatformPresenter : IPresenter, Updatable
         _view.BlockDropped -= OnBLockDropped;
     }
 
-
     private void OnFull(List<BlockView> blocksOnPlatform, int meleeCubes, int rangeCubes)
     {
         _spawnView.SetAsSpawnRequired(meleeCubes, rangeCubes);
@@ -39,5 +38,6 @@ public class PlatformPresenter : IPresenter, Updatable
         _model.PutBlock(block);
         block.Drop();
     }
+
     public void Update(float deltaTime) => _view.SetIsAbleToTake(_model.GetIsAbleToTake(_view.SelectedBlock)); 
 }

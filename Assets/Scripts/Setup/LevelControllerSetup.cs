@@ -15,8 +15,6 @@ public class LevelControllerSetup : MonoBehaviour
     [SerializeField] private WinPanelSetup _winPanel;
     [SerializeField] private PausePanelSetup _pausePanel;
 
-    
-
     private void Awake()
     {
         int nextLevelIndex = _settings.CurrentLevelNumber + 1;

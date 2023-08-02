@@ -16,6 +16,7 @@ public class WarriorSpawnerModel
 
     public event Action<GameObject, Vector2> WarriorSetToSpawn;
     public event Action<int, Color> CounterUpdated;
+
     public WarriorSpawnerModel(List<GameObject> meleeWarriorsByLevel, List<GameObject> rangeWarriorsByLevel, int maxWarriorCount, DragDropInput input)
     {
         _meleeWarriorsByLevel = meleeWarriorsByLevel;
@@ -45,7 +46,6 @@ public class WarriorSpawnerModel
     }
     
     public void IncreaseCounter() => _currentWarriorCount++;    
-
 
     public void DecreaseCounter() => _currentWarriorCount--;
 

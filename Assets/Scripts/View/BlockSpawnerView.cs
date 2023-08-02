@@ -11,7 +11,7 @@ public class BlockSpawnerView : MonoBehaviour
     public event Action RespawnRequested;
 
     public void SpawnBlock(Vector3 position, GameObject blockToSpawn)
-    {       
+    {
         var spawned = _spawner.Spawn(blockToSpawn, position, transform);
         spawned.GetComponent<BlockSetup>().Init(_platform);
         InstantiateComplete?.Invoke(spawned.GetComponent<BlockView>());

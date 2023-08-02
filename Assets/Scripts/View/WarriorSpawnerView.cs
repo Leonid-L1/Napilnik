@@ -7,8 +7,12 @@ public class WarriorSpawnerView : MonoBehaviour
 {
     [SerializeField] private TMP_Text _warriorCounter;
 
-    private string _maxWarriorCount;
+    private int _currentCount = 0;
+
+    private int _maxWarriorCount;
     private AudioSource _spawnSound;
+
+    public bool IsAbleToSpawn => _currentCount <= _maxWarriorCount;
 
     public event Action<AllyCombatant, int> WarriorNewLevelSet;
     public event Action<int,int> SpawnRequired;
@@ -18,7 +22,7 @@ public class WarriorSpawnerView : MonoBehaviour
 
     public void Init(int maxCount)
     {
-        _maxWarriorCount = maxCount.ToString();
+        _maxWarriorCount = maxCount;
         _warriorCounter.text = 0 + "/" + _maxWarriorCount;
         _warriorCounter.color = Color.white;
     }
@@ -36,8 +40,9 @@ public class WarriorSpawnerView : MonoBehaviour
     }
 
     public void UpdateText(int currentCount, Color color)
-    {
-        _warriorCounter.text = currentCount.ToString() + "/" + _maxWarriorCount;
+    {   
+        _currentCount = currentCount;
+        _warriorCounter.text = _currentCount.ToString() + "/" + _maxWarriorCount;
         _warriorCounter.color = color;
     }
 }
