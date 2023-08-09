@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(Animator))]
@@ -18,7 +19,6 @@ public class UpgradePanelView : MonoBehaviour
         _animator = GetComponent<Animator>();
         _upgradeSound = GetComponent<AudioSource>();
     }
-
     
     private void OnEnable()
     {
@@ -40,7 +40,5 @@ public class UpgradePanelView : MonoBehaviour
         _upgradeSound.Play();
     }
 
-    public void RemovePanel() => _animator.Play(RemovePanelAnimation);  
-
-    
+    public void RemovePanel(Button button) => _animator.Play(RemovePanelAnimation);  
 }

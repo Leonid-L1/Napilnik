@@ -14,7 +14,7 @@ public class WinPanelPresenter
     public void Enable()
     {
         _view.PanelIsActive += OnPanelActive;
-        _view.NextLevelRequested += _model.LoadMainMenu;
+        _view.NextLevelRequested += _model.LoadNextlevel;
         _view.MenuRequested += _model.LoadMainMenu;
         _model.ResultCounted += _view.ShowStars;
     }
@@ -22,7 +22,7 @@ public class WinPanelPresenter
     public void Disable()
     {
         _view.PanelIsActive -= OnPanelActive;
-        _view.NextLevelRequested -= _model.LoadMainMenu;
+        _view.NextLevelRequested -= _model.LoadNextlevel;
         _view.MenuRequested -= _model.LoadMainMenu;
         _model.ResultCounted -= _view.ShowStars;
     }

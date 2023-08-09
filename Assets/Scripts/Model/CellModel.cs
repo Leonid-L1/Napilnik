@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class CellModel 
@@ -8,7 +7,7 @@ public class CellModel
     private Vector3 _selfPosition;
 
     private float _toPutHeight = 3.5f;
-    private bool _isUnderCube;
+    private bool _isLocked;
     private Color _defaultColor;
 
     public CellModel(PlatformView platform, BoxCollider collider, Vector3 selfPosition, Color defaultColor)
@@ -19,26 +18,17 @@ public class CellModel
         _defaultColor = defaultColor;
     }
 
-    public void SetCondition(bool isUnderCube)
-    {
-        _isUnderCube = isUnderCube;
-    }
+    public void SetCondition(bool isUnderCube) => _isLocked = isUnderCube;
 
     public Color SetCurrentColor()
     {
-        if (_isUnderCube == false)
-        {
+        if (_isLocked == false)
             return _defaultColor;
-        }
 
         if (_platform.IsAbleToTake)
-        {
             return Color.green;
-        }
         else
-        {
             return Color.red;
-        }
     }
 
     public void PutCube(Transform cubeAbove)
@@ -49,7 +39,7 @@ public class CellModel
 
     public void Reset()
     {
-        _isUnderCube = false;
+        _isLocked = false;
         _collider.enabled = true;
     } 
 }

@@ -27,18 +27,18 @@ RenderSettings:
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 1cf6f4c6e6e0518419839d3f5448dd99, type: 2}
-  m_HaloStrength: 0.5
-  m_FlareStrength: 1
-  m_FlareFadeSpeed: 3
+  m_HaloStrength: 0
+  m_FlareStrength: 0
+  m_FlareFadeSpeed: 0
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 1
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0.5
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 955367026}
-  m_IndirectSpecularColor: {r: 0.07372963, g: 0.2766391, b: 0.81062615, a: 1}
+  m_IndirectSpecularColor: {r: 0.036864813, g: 0.13831955, b: 0.40531307, a: 0.5}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -70,7 +70,7 @@ LightmapSettings:
     m_FinalGather: 0
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
-    m_ReflectionCompression: 2
+    m_ReflectionCompression: 1
     m_MixedBakeMode: 2
     m_BakeBackend: 1
     m_PVRSampling: 1
@@ -504,71 +504,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4376657132610222105, guid: e133dac167ef59c40b7678ba58107c6a, type: 3}
   m_PrefabInstance: {fileID: 27807145}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &28452396
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 28452398}
-  - component: {fileID: 28452397}
-  m_Layer: 0
-  m_Name: Reflection Probe
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!215 &28452397
-ReflectionProbe:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28452396}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
-  m_TimeSlicingMode: 0
-  m_Resolution: 128
-  m_UpdateFrequency: 0
-  m_BoxSize: {x: 10, y: 10, z: 10}
-  m_BoxOffset: {x: 0, y: 0, z: 0}
-  m_NearClip: 0.3
-  m_FarClip: 1000
-  m_ShadowDistance: 100
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IntensityMultiplier: 1
-  m_BlendDistance: 1
-  m_HDR: 1
-  m_BoxProjection: 0
-  m_RenderDynamicObjects: 0
-  m_UseOcclusionCulling: 1
-  m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
---- !u!4 &28452398
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28452396}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7617869, y: 17.637592, z: -11.625143}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &28563850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5885,14 +5820,14 @@ MonoBehaviour:
   _settings: {fileID: 11400000, guid: aca492b3f9a0c1043a9c51c739b63ba9, type: 2}
   _respawnButton: {fileID: 2423944912180042260}
   _warriorSpawner: {fileID: 1221894334}
+  _losePanel: {fileID: 925217013}
   _playerHealth: {fileID: 1287979317}
+  _winPanel: {fileID: 69997752}
+  _pausePanel: {fileID: 782158207}
   _enemyProgression: {fileID: 2120584943}
   _enemySpawner: {fileID: 1919357669}
   _upgradeMelee: {fileID: 1960348426}
   _upgradeRange: {fileID: 1597319593}
-  _losePanel: {fileID: 925217013}
-  _winPanel: {fileID: 69997752}
-  _pausePanel: {fileID: 782158207}
 --- !u!1001 &430220772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15865,7 +15800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddbf244bc0eebe8429f87fc41a09470d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _input: {fileID: 963194233}
   _meleeWarriorsByLevel:
   - {fileID: 7871263090079910667, guid: d6334a8800931cb4dbb0f1e209322868, type: 3}
   - {fileID: 7871263090079910667, guid: 397592b98e3d7314a86b0bfa4dbf86ba, type: 3}
@@ -15874,6 +15808,7 @@ MonoBehaviour:
   - {fileID: 4128907927736839228, guid: 078c0197304fcec4c975dd8abf5d6f3a, type: 3}
   - {fileID: 4128907927736839228, guid: 591cbec24638db04e93394cc3a5527d8, type: 3}
   - {fileID: 4128907927736839228, guid: 5c06e64e6ac6334478a3c7d84725010b, type: 3}
+  _platform: {fileID: 761435664}
 --- !u!114 &1221894335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21085,8 +21020,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca5e444333f71254da42d9f33e8ad780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _starPrefab: {fileID: 9071883245485906297, guid: fba9549b6331e254fb1faf7e15b58f78, type: 3}
-  _starsContainer: {fileID: 1243341014}
 --- !u!114 &1597319593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21099,7 +21032,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0049a3807a485e74ea61e80430962a8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnerView: {fileID: 0}
+  _spawnerView: {fileID: 1221894335}
+  _starPrefab: {fileID: 9071883245485906297, guid: fba9549b6331e254fb1faf7e15b58f78, type: 3}
+  _starsContainer: {fileID: 1243341014}
 --- !u!114 &1597319594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26561,8 +26496,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca5e444333f71254da42d9f33e8ad780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _starPrefab: {fileID: 9071883245485906297, guid: fba9549b6331e254fb1faf7e15b58f78, type: 3}
-  _starsContainer: {fileID: 9154782949326568070}
 --- !u!114 &1960348426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26575,7 +26508,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0049a3807a485e74ea61e80430962a8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnerView: {fileID: 0}
+  _spawnerView: {fileID: 1221894335}
+  _starPrefab: {fileID: 9071883245485906297, guid: fba9549b6331e254fb1faf7e15b58f78, type: 3}
+  _starsContainer: {fileID: 9154782949326568070}
 --- !u!1001 &1962059828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40324,7 +40259,7 @@ Transform:
   - {fileID: 1607044151773226825}
   - {fileID: 822052952}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1607044151557824390
 MonoBehaviour:
@@ -41174,7 +41109,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 87.7
+  m_fontSize: 87.9
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1

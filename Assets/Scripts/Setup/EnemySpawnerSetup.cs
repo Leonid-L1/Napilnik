@@ -9,10 +9,10 @@ public class EnemySpawnerSetup : MonoBehaviour
     private EnemySpawnerModel _model;
     private EnemySpawnerPresenter _presenter;
 
-    public void Init(GameObject template, int enemiesTotalCount, float timeBetweenSpawn, EnemyProgressionBarView progressionView)
+    public void Init(float timeBetweenSpawn, float startDelay, int enemiesTotalCount, GameObject template,  EnemyProgressionBarView progressionView)
     {
         _view = GetComponent<EnemySpawnerView>();
-        _model = new EnemySpawnerModel(timeBetweenSpawn, template , transform, enemiesTotalCount);
+        _model = new EnemySpawnerModel(timeBetweenSpawn, startDelay, enemiesTotalCount, template , transform);
         _timer.AddUpdatable(_model);
         _presenter = new EnemySpawnerPresenter(_model, _view, progressionView);
         _presenter.Enable();

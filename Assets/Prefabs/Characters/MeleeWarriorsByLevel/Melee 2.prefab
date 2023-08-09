@@ -2126,6 +2126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _warriorType: {fileID: 3846443178347821166}
+  _movementSpeed: 3.25
 --- !u!136 &6104006358431932730
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2153,7 +2154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
-  _attackDamage: 20
+  _attackDamage: 50
 --- !u!114 &-5225218303135781289
 MonoBehaviour:
   m_ObjectHideFlags: 0

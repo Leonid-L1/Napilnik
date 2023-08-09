@@ -13,27 +13,17 @@ public class CellPresenter :IPresenter, Updatable
 
     public void Enable()
     {
-        _view.CubeMovedAbove += ConditionChanged;
-        _view.CubeIsAbleToPut += OnCubeIsAbleToPut;
-        _view.ResetRequested += OnResetRequested;
-        //_model.ColorChanged += OnColorChanged;  
+        _view.CubeMovedAbove += _model.SetCondition;
+        _view.CubeIsAbleToPut += _model.PutCube;
+        _view.ResetRequested += _model.Reset;
     }
 
     public void Disable()
     {
-        _view.CubeMovedAbove -= ConditionChanged;
-        _view.CubeIsAbleToPut -= OnCubeIsAbleToPut;
-        _view.ResetRequested -= OnResetRequested;
-        //_model.ColorChanged -= OnColorChanged;
+        _view.CubeMovedAbove -= _model.SetCondition;
+        _view.CubeIsAbleToPut -= _model.PutCube;
+        _view.ResetRequested -= _model.Reset;
     }
 
     public void Update(float deltaTime) => _view.SetColor(_model.SetCurrentColor());
-
-    private void ConditionChanged(bool isAbove) => _model.SetCondition(isAbove);   
-
-    private void OnResetRequested() => _model.Reset();
-
-    private void OnCubeIsAbleToPut(Transform cube) => _model.PutCube(cube);
-
-    //private void OnColorChanged(Color color) => _view.SetColor(color);
 }

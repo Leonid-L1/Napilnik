@@ -8,6 +8,8 @@ using UnityEngine;
 public class CharacterSetup : MonoBehaviour
 {
     [SerializeField] private Combatant _warriorType;
+    [SerializeField] private float _movementSpeed;
+
     private CharacterHealthModel _healthModel;
     private CharacterHealthView _healthView;
 
@@ -22,7 +24,7 @@ public class CharacterSetup : MonoBehaviour
     private void Awake()
     {
         _healthModel = new CharacterHealthModel(_warriorType.MaxHealth);
-        _movementModel = new MovementModel();
+        _movementModel = new MovementModel(_movementSpeed);
         _animationModel = new CharacterAnimationModel();
 
         _healthView = GetComponent<CharacterHealthView>();

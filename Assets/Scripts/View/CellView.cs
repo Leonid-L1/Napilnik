@@ -13,10 +13,7 @@ public class CellView : MonoBehaviour
     public event Action<Transform> CubeIsAbleToPut;
     public event Action ResetRequested;
 
-    private void Awake()
-    {
-        _meshRenderer = GetComponent<MeshRenderer>(); 
-    }
+    private void Awake() => _meshRenderer = GetComponent<MeshRenderer>();
 
     private void OnTriggerEnter(Collider other)
     {
@@ -36,17 +33,14 @@ public class CellView : MonoBehaviour
         }           
     }
 
-    public void SetColor(Color color)
-    {
-        _meshRenderer.material.color = color;
-    }
+    public void SetColor(Color color) => _meshRenderer.material.color = color;
 
     public void PutCube()
     {           
         CubeIsAbleToPut?.Invoke(CubeAbove);
         IsEmpty = false;
     }
-
+    
     public void Reset()
     {
         ResetRequested?.Invoke();

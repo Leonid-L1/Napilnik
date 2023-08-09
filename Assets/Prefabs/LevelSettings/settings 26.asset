@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff8738b55aff0c4e9d4a2bd91eb3ecd, type: 3}
+  m_Name: settings 26
+  m_EditorClassIdentifier: 
+  _currentLevelNumber: 26
+  _respawnReloadTime: 0.5
+  _enemyTemplate: {fileID: 736602435056203518, guid: 4eeb88fac44fc1046b23dae498faf512, type: 3}
+  _maxWarriorCount: 3
+  _playerHealth: 1
+  _enemiesCount: 5
+  _timeBetweenEnemySpawn: 2.5
+  _maxWariorUpgradeLevel: 5
+  _enemyStartSpawnDelay: 5
+  _upgradeCheckPoints: 0a000000

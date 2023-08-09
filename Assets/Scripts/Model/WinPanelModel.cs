@@ -15,6 +15,7 @@ public class WinPanelModel
     private Loading _loader;
     private int _maxHealth;
     private int _nextLevelIndex;
+
     private int _levelNumber => _nextLevelIndex - 1;
     private string _isCompleteKey => _levelNumber.ToString() + IsCompleted;
     private string _starsCountKey => _levelNumber.ToString() + StarsCount;
@@ -60,6 +61,7 @@ public class WinPanelModel
         PlayerPrefs.SetString(_isCompleteKey, IsCompleted);
         PlayerPrefs.SetInt(_starsCountKey, starsCount);
     }
+
     public void LoadNextlevel() => _loader.Load(_nextLevelIndex);
 
     public void LoadMainMenu() => _loader.Load(MainMenuIndex);

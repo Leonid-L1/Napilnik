@@ -1,14 +1,18 @@
 using System;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider))]
 public class PlatformView : MonoBehaviour
 {
     private BlockView _selectedBlock;
+    private BoxCollider _collider;
 
     public BlockView SelectedBlock => _selectedBlock;
     public bool IsAbleToTake { get; private set; }
 
     public event Action<BlockView> BlockDropped;
+
+    private void Awake() => _collider = GetComponent<BoxCollider>();
     
     private void OnTriggerEnter(Collider other)
     {
@@ -35,5 +39,7 @@ public class PlatformView : MonoBehaviour
         }            
     }
 
+    public void Lock(bool isLock) => _collider.enabled = !isLock;
+    
     public void SetIsAbleToTake(bool isAbleToTake) => IsAbleToTake = isAbleToTake;
 }

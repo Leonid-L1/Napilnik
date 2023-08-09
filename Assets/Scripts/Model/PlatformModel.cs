@@ -26,13 +26,9 @@ public class PlatformModel
             return false;
         
         if(UsingCellsCount() == block.CubesCount)
-        {   
-            return true;        
-        }
+            return true;
         else
-        {
             return false;
-        }
     }
 
     public void PutBlock(BlockView block)
@@ -46,7 +42,7 @@ public class PlatformModel
         CountCubeTypes(block);
         CountEmptyCells();
     }
-
+    
     private int UsingCellsCount()
     {
         int usingCellsCount = 0;

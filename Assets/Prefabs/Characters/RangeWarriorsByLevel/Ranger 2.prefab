@@ -720,6 +720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _warriorType: {fileID: 5168027521252458080}
+  _movementSpeed: 4.2
 --- !u!136 &55523690281469453
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -746,8 +747,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3707253a97ebc604eb7c78cfc45faa07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 200
-  _attackDamage: 40
+  _maxHealth: 60
+  _attackDamage: 70
 --- !u!114 &3217506182764244895
 MonoBehaviour:
   m_ObjectHideFlags: 0

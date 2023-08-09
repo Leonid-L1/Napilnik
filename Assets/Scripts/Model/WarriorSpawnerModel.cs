@@ -7,22 +7,21 @@ public class WarriorSpawnerModel
     private List<GameObject> _meleeWarriorsByLevel;
     private List<GameObject> _rangeWarriorsByLevel;
 
-    private DragDropInput _input;
     private int _maxWarriorCount;
     private int _currentWarriorCount = 0;
     private int _currentMeleeLevel = 0;
     private int _currentRangeLevel = 0;
     private float _randomCircleRadius = 2f;
-
+    
     public event Action<GameObject, Vector2> WarriorSetToSpawn;
     public event Action<int, Color> CounterUpdated;
+    public event Action<bool> UpdatePlatformCondition;
 
-    public WarriorSpawnerModel(List<GameObject> meleeWarriorsByLevel, List<GameObject> rangeWarriorsByLevel, int maxWarriorCount, DragDropInput input)
+    public WarriorSpawnerModel(List<GameObject> meleeWarriorsByLevel, List<GameObject> rangeWarriorsByLevel, int maxWarriorCount)
     {
         _meleeWarriorsByLevel = meleeWarriorsByLevel;
         _rangeWarriorsByLevel = rangeWarriorsByLevel;
         _maxWarriorCount = maxWarriorCount;
-        _input = input;
     }
 
     public void OnSpawnRequired(int meleeWarriorsToSpawn, int rangeWarriorsToSpawn)
@@ -52,15 +51,10 @@ public class WarriorSpawnerModel
     public void UpdateCounter()
     {
         if (_currentWarriorCount >= _maxWarriorCount)
-        {
             CounterUpdated?.Invoke(_currentWarriorCount, Color.red);
-            _input.enabled = false;
-        }
-
         else
-        {
             CounterUpdated?.Invoke(_currentWarriorCount, Color.white);
-            _input.enabled = true;
-        }           
+
+        UpdatePlatformCondition?.Invoke(_currentWarriorCount >= _maxWarriorCount);
     }
 }

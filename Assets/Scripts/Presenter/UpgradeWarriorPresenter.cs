@@ -15,12 +15,14 @@ public class UpgradeWarriorPresenter
     {
         _view.UpgradeButtonClicked += _model.UpgradeWarrior;
         _model.WarriorUpgraded += OnWarriorUpgraded;
+        _model.MaxLevelReached += _view.DisableButton;
     }
 
     public void Disable()
     {
         _view.UpgradeButtonClicked -= _model.UpgradeWarrior;
         _model.WarriorUpgraded -= OnWarriorUpgraded;
+        _model.MaxLevelReached -= _view.DisableButton;
     }
 
     private void OnWarriorUpgraded(AllyCombatant warriorType, int level)
