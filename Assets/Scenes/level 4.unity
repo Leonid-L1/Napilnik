@@ -18531,8 +18531,7 @@ MonoBehaviour:
   - {x: 6.5, y: 1, z: -20}
   - {x: 0, y: 1, z: -20}
   - {x: -6.5, y: 1, z: -20}
-  _blockType1:
-  - {fileID: 8413911271953741634, guid: 02c49d093a08cd548a758548a0b8f462, type: 3}
+  _blockType1: []
   _blockType2: []
   _blockType3:
   - {fileID: 8114147489069528602, guid: b6b7905884081a64188dc77956e703c0, type: 3}
@@ -40031,7 +40030,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 87.9
+  m_fontSize: 85.9
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1

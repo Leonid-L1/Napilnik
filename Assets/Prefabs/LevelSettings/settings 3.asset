@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eff8738b55aff0c4e9d4a2bd91eb3ecd, type: 3}
   m_Name: settings 3
   m_EditorClassIdentifier: 
-  _currentLevelNumber: 2
+  _currentLevelNumber: 3
   _respawnReloadTime: 0.7
   _enemyTemplate: {fileID: 736602435056203518, guid: c357a6192c5f854419260c54bf218aa8, type: 3}
   _maxWarriorCount: 6
@@ -21,4 +21,4 @@ MonoBehaviour:
   _timeBetweenEnemySpawn: 2
   _maxWariorUpgradeLevel: 1
   _enemyStartSpawnDelay: 4
-  _upgradeCheckPoints: 0300000006000000
+  _upgradeCheckPoints: 0400000008000000

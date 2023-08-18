@@ -18533,11 +18533,7 @@ MonoBehaviour:
   - {x: -6.5, y: 1, z: -20}
   _blockType1: []
   _blockType2: []
-  _blockType3:
-  - {fileID: 8114147489069528602, guid: b6b7905884081a64188dc77956e703c0, type: 3}
-  - {fileID: 2327415170529528376, guid: ce9344472c511be4e9c97f0babff11a7, type: 3}
-  - {fileID: -3606484085344340334, guid: 87c7090d1b381bd4080ef50683094326, type: 3}
-  - {fileID: -4039352139600214488, guid: f077dd76b8b94904e89698acb98b8cda, type: 3}
+  _blockType3: []
   _blockType4:
   - {fileID: 7252051882959685597, guid: 82d78d1d4bd753f4db0bd7013467f645, type: 3}
   - {fileID: 8663318852568065681, guid: d30c506a4e732104fa180c868305ebea, type: 3}
@@ -40028,7 +40024,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 87.9
+  m_fontSize: 85.9
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1

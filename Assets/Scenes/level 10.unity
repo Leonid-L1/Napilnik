@@ -25743,7 +25743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnerView: {fileID: 1221894331}
   _starPrefab: {fileID: 9071883245485906297, guid: fba9549b6331e254fb1faf7e15b58f78, type: 3}
-  _starsContainer: {fileID: 0}
+  _starsContainer: {fileID: 9154782949326568070}
 --- !u!1001 &1962059828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40034,7 +40034,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 87.9
+  m_fontSize: 85.9
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1

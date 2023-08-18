@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: settings 29
   m_EditorClassIdentifier: 
   _currentLevelNumber: 29
-  _respawnReloadTime: 0.5
+  _respawnReloadTime: 1
   _enemyTemplate: {fileID: 736602435056203518, guid: 4eeb88fac44fc1046b23dae498faf512, type: 3}
-  _maxWarriorCount: 3
-  _playerHealth: 1
-  _enemiesCount: 5
-  _timeBetweenEnemySpawn: 2.5
-  _maxWariorUpgradeLevel: 5
-  _enemyStartSpawnDelay: 5
-  _upgradeCheckPoints: 0a000000
+  _maxWarriorCount: 25
+  _playerHealth: 20
+  _enemiesCount: 44
+  _timeBetweenEnemySpawn: 1.5
+  _maxWariorUpgradeLevel: 6
+  _enemyStartSpawnDelay: 8.7
+  _upgradeCheckPoints: 050000000f00000014000000190000001e00000019000000

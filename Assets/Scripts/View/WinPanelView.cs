@@ -28,13 +28,13 @@ public class WinPanelView : MonoBehaviour
 
     private void OnEnable()
     {
-        _nextLevelButton.onClick.AddListener(OnNextLevelButtonClick);
+        _nextLevelButton?.onClick.AddListener(OnNextLevelButtonClick);
         _menuButton.onClick.AddListener(OnMenuButtonClick);
     }
 
     private void OnDisable()
     {
-        _nextLevelButton.onClick.RemoveListener(OnNextLevelButtonClick);
+        _nextLevelButton?.onClick.RemoveListener(OnNextLevelButtonClick);
         _menuButton.onClick.RemoveListener(OnMenuButtonClick);
     }
 
@@ -45,7 +45,9 @@ public class WinPanelView : MonoBehaviour
         _timeScaleController = GetComponent<TimeScaleController>();
         _winSound = GetComponent<AudioSource>();
         _menuButton.interactable = false;
-        _nextLevelButton.interactable = false;       
+
+        if(_nextLevelButton != null)
+            _nextLevelButton.interactable = false;       
     }
 
     public void Show()
@@ -60,7 +62,9 @@ public class WinPanelView : MonoBehaviour
     {
         PanelIsActive?.Invoke();
         _menuButton.interactable = true;
-        _nextLevelButton.interactable = true;
+
+        if (_nextLevelButton != null)
+            _nextLevelButton.interactable = true;
     }
 
     public void Remove() => _animator.Play(RemoveAnimation);
