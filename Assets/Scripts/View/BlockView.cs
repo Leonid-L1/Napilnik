@@ -5,6 +5,7 @@ using UnityEngine;
 public class BlockView : MonoBehaviour
 {   
     [SerializeField] private ParticleSystem _particleSystem;
+
     public Vector3 OriginPosition { get; private set; }
     public List<CubeView> Cubes { get; private set; }
 
@@ -33,5 +34,4 @@ public class BlockView : MonoBehaviour
     }
     
     public void Destroy() => Destroy(gameObject);
-
 }

@@ -10,18 +10,7 @@ public class BlockPresenter : IPresenter
         _model = model;
     }
 
-    public void Enable()
-    {
-        _view.Dropped += OnDropped;
-    }
+    public void Enable() => _view.Dropped += _model.SetAsDropped;
 
-    public void Disable()
-    {
-        _view.Dropped -= OnDropped;
-    }
-
-    private void OnDropped()
-    {
-        _model.SetAsDropped();
-    }
+    public void Disable() => _view.Dropped -= _model.SetAsDropped;
 }

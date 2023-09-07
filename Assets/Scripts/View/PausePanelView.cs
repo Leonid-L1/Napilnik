@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 [RequireComponent(typeof(Animator))]
 [RequireComponent (typeof(TimeScaleController))]
-public class PausePanelView : MonoBehaviour
+public class PausePanelView : Panel
 {
     private const string ShowAnimation = "ShowWithStopTime";
     private const string RemoveAnimation = "RemoveAndStartTime";
@@ -52,7 +51,9 @@ public class PausePanelView : MonoBehaviour
     }
     
     public void SetPanelAsActive()
-    {
+    {   
+        _isOnScreen = true;
+            
         foreach (Button button in _buttons)
             button.interactable = true;
     }
@@ -65,17 +66,25 @@ public class PausePanelView : MonoBehaviour
 
         foreach (Button button in _buttons)
             button.interactable = false;
+
+        _isOnScreen = false;
     }
 
     private void OnRestartButtonCLick()
     {
         _timeScaleController.StartTime();
         RestartRequsted?.Invoke();
+
+        _isOnScreen = false;
     }
 
     private void OnMainMenuButtonClick()
     {
         _timeScaleController.StartTime();
         MenuRequested?.Invoke();
+
+        _isOnScreen = false;
     }
+
+    //private void Update() => Debug.Log(_isOnScreen);   
 }

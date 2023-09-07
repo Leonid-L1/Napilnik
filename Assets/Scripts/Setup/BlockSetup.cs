@@ -9,6 +9,7 @@ public class BlockSetup : MonoBehaviour
     private const string NoCubeComponentMessage = "Gameobjects you put in this List should contain CubeView component";
 
     [SerializeField] private List<GameObject> _cubesGameobjects = new List<GameObject>();
+    [SerializeField] private BoxCollider _dragCollider;
 
     private List<CubeView> _cubes = new List<CubeView>();
     private BlockPresenter _presenter;
@@ -24,7 +25,7 @@ public class BlockSetup : MonoBehaviour
 
         _view = GetComponent<BlockView>();
         _view.Init(_cubes, transform.position);
-        _model = new BlockModel(GetComponent<BoxCollider>());
+        _model = new BlockModel(GetComponent<BoxCollider>(), _dragCollider);
         _presenter = new BlockPresenter(_view, _model);
         _presenter.Enable();
     }

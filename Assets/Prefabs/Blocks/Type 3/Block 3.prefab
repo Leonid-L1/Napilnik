@@ -1,5 +1,63 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &545906912265852471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2782154113475949002}
+  - component: {fileID: 6932409562058495771}
+  - component: {fileID: 3444346778145463671}
+  m_Layer: 0
+  m_Name: DragCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2782154113475949002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545906912265852471}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4022220705287161423}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6932409562058495771
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545906912265852471}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 3, z: 4}
+  m_Center: {x: 0, y: -1, z: 5}
+--- !u!114 &3444346778145463671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545906912265852471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1e82d2a7509a01448daf1cb0d800d95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4372762274385833151
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,6 +92,7 @@ Transform:
   - {fileID: 693284782755985846}
   - {fileID: 1235115162719209055}
   - {fileID: 3829090785947639786}
+  - {fileID: 2782154113475949002}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48,8 +107,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
-  m_Center: {x: 0, y: -0.4, z: 0}
+  m_Size: {x: 3, y: 0.1, z: 3}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &4627395046880033113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,6 +137,7 @@ MonoBehaviour:
   _cubesGameobjects:
   - {fileID: 6207356576510375962}
   - {fileID: 5665525649022683123}
+  _dragCollider: {fileID: 6932409562058495771}
 --- !u!1001 &3910202039822064505
 PrefabInstance:
   m_ObjectHideFlags: 0

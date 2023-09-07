@@ -1,9 +1,8 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SettingsPanelView : MonoBehaviour
+public class SettingsPanelView : Panel
 {
     [SerializeField] private Button _settingsButton;
     [SerializeField] private Button _exitSettingsBitton;
@@ -13,7 +12,6 @@ public class SettingsPanelView : MonoBehaviour
     public event Action<float> MusicVolumeChangeRequested;
     public event Action<float> EffectsVolumeChangeRequested;
 
-    
     private void OnEnable()
     {
         _settingsButton.onClick.AddListener(OnSettingsButtonCLick);
@@ -38,7 +36,15 @@ public class SettingsPanelView : MonoBehaviour
 
     public void SetPanelAsActive() { }
 
-    private void OnSettingsButtonCLick() => _settingsButton.interactable = false;
+    private void OnSettingsButtonCLick()
+    {
+        _isOnScreen = true; 
+        _settingsButton.interactable = false;
+    }
 
-    private void OnExitButtonCLick() => _settingsButton.interactable = true;
+    private void OnExitButtonCLick()
+    {
+        _isOnScreen = false;
+        _settingsButton.interactable = true;
+    }
 }

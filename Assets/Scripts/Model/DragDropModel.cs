@@ -2,24 +2,26 @@ using UnityEngine;
 
 public class DragDropModel 
 {
-    private const float _MinPitch = 0.85f;
+    private const float MinPitch = 0.85f;
     private const float MaxPitch = 1;
 
     private AudioSource _dragSound;
     private AudioSource _dropSound;
-
+    private GameObject _pointer;
     private float _rayLength = 50f;
-    private float _height = 4f;
+    private float _height = 5f;
     private RaycastHit _hit;
     private BlockView _selectedBlock;
 
     private Camera _camera;
 
-    public DragDropModel(Camera camera, AudioSource dragSound, AudioSource dropSound)
-    {   
+    public DragDropModel(Camera camera, AudioSource dragSound, AudioSource dropSound, GameObject pointer)
+    {
         _camera = camera;
         _dragSound = dragSound;
         _dropSound = dropSound;
+        _pointer = pointer;
+        _pointer.SetActive(false);
     }
 
     public void ThrowRay(Vector3 transformPosition)
@@ -35,11 +37,15 @@ public class DragDropModel
     }
 
     public void MoveBlock()
-    {
+    {   
+        _pointer.SetActive(_selectedBlock != null);
+
         if (_selectedBlock == null)
             return;
 
-        _selectedBlock.transform.position = new Vector3(_hit.point.x, _height, _hit.point.z);
+        Vector3 currentPosition = new Vector3(_hit.point.x, _height, _hit.point.z);
+        _selectedBlock.gameObject.transform.position = currentPosition;
+        _pointer.transform.position = currentPosition;
     }
 
     public void Drop()
@@ -47,9 +53,10 @@ public class DragDropModel
         _dropSound.Play();  
         _selectedBlock = null;
     }
+
     public void GetSelectedBLock(out BlockView selectedBlock) => selectedBlock = _selectedBlock;
 
-    private void SelectBlock(BlockView block) => _selectedBlock = block;
+    private void SelectBlock(BlockView toSelect) => _selectedBlock = toSelect;
 
     private Vector3 MousePositionOffset(Vector3 transformPosition)
     {
@@ -62,7 +69,7 @@ public class DragDropModel
 
     private void PlayPitchedSound(AudioSource sound)
     {
-        sound.pitch = UnityEngine.Random.Range(_MinPitch, MaxPitch);
+        sound.pitch = UnityEngine.Random.Range(MinPitch, MaxPitch);
         sound.Play();
     }
 }

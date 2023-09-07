@@ -16,13 +16,13 @@ public class PlatformView : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out BlockView block))
-            _selectedBlock = block;
+        if(other.TryGetComponent(out Block block))
+            _selectedBlock = block.GetComponentInParent<BlockView>();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent(out BlockView block))
+        if (other.TryGetComponent(out Block block))
             _selectedBlock = null;
     }
 

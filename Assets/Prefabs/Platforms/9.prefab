@@ -1348,6 +1348,7 @@ MonoBehaviour:
   - {fileID: 248501200149682461}
   - {fileID: 3844708035724223069}
   _timer: {fileID: 0}
+  _spawnView: {fileID: 0}
 --- !u!65 &4622012171733853554
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1360,7 +1361,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.5, y: 0.1, z: 3.5}
-  m_Center: {x: 0, y: 0.73, z: 1.25}
+  m_Center: {x: 0, y: 1, z: 1.25}
 --- !u!54 &6395302941786960373
 Rigidbody:
   m_ObjectHideFlags: 0

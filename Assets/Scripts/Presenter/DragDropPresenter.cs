@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class DragDropPresenter :IPresenter, Updatable
 {
     private DragDropModel _model;
@@ -15,15 +11,9 @@ public class DragDropPresenter :IPresenter, Updatable
         _platform = platofrm;
     }
 
-    public void Enable()
-    {
-        _input.MouseUp += OnMouseUp;
-    }
+    public void Enable() => _input.MouseUp += OnMouseUp;
 
-    public void Disable()
-    {
-        _input.MouseUp -= OnMouseUp;
-    }
+    public void Disable() => _input.MouseUp -= OnMouseUp;
 
     public void Update(float deltaTime)
     {      

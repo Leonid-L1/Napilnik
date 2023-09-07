@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(Animator))]
-public class UpgradePanelView : MonoBehaviour
+public class UpgradePanelView : Panel
 {
     private const string ShowPanelAnimation = "ShowUpgradePanel";
     private const string RemovePanelAnimation = "RemoveUpgradePanel";
@@ -33,12 +33,17 @@ public class UpgradePanelView : MonoBehaviour
     }
 
     public void ShowPanel()
-    {
+    {   
+        _isOnScreen = true;
         _animator.Play(ShowPanelAnimation);
         _meleeUpgrade.SetAsInteractable();
         _rangeUpgrade.SetAsInteractable();
         _upgradeSound.Play();
     }
 
-    public void RemovePanel(Button button) => _animator.Play(RemovePanelAnimation);  
+    public void RemovePanel(Button button)
+    {
+        _isOnScreen = false;
+        _animator.Play(RemovePanelAnimation);
+    }
 }

@@ -48,7 +48,7 @@ public class LosePanelView : MonoBehaviour
     }
 
     public void Show()
-    {
+    {   
         _animator.Play(ShowAnimation);
         _loseSound.Play();
     }
@@ -62,7 +62,7 @@ public class LosePanelView : MonoBehaviour
     public void Remove() => _animator.Play(RemoveAnimation);
     
 
-    private void OnReviveButtonClick()
+    private void OnReviveButtonClick() //убрать
     {
         _timeScaleController.StartTime();
         ReviveRequested?.Invoke();
