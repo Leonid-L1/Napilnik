@@ -1,4 +1,4 @@
-public class CastleHealthPresenter 
+public class CastleHealthPresenter : IPresenter
 {   
     private CastleHealthView _view;
     private CastleHealthModel _model;

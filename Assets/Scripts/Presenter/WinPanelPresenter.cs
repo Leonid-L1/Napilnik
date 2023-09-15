@@ -1,4 +1,4 @@
-public class WinPanelPresenter 
+public class WinPanelPresenter : IPresenter
 {
     private WinPanelView _view;
     private WinPanelModel _model;
@@ -27,8 +27,5 @@ public class WinPanelPresenter
         _model.ResultCounted -= _view.ShowStars;
     }
 
-    private void OnPanelActive()
-    {
-        _model.CountResult(_healthView.CurrentHealth);
-    }    
+    private void OnPanelActive() => _model.CountResult(_healthView.CurrentHealth);     
 }

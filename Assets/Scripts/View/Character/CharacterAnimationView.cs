@@ -2,7 +2,6 @@ using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-
 public class CharacterAnimationView : MonoBehaviour
 {
     private Animator _animator;
@@ -25,9 +24,5 @@ public class CharacterAnimationView : MonoBehaviour
 
     public void SetTrigger(string parameterName) => _animator.SetTrigger(parameterName);
 
-    public void OnDeath(string parameterName)
-    {
-        Destroy(gameObject);
-    }
-
+    public void OnDeath(string parameterName) => Destroy(gameObject);
 }

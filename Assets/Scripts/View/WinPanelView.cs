@@ -9,10 +9,6 @@ using UnityEngine.UI;
 [RequireComponent(typeof(TimeScaleController))]
 public class WinPanelView : MonoBehaviour
 {
-    private const string StarAnimation = "Star";
-    private const string ShowAnimation = "Show";
-    private const string RemoveAnimation = "RemoveAndStartTime";
-
     [SerializeField] private Button _nextLevelButton;
     [SerializeField] private Button _menuButton;
 
@@ -52,7 +48,7 @@ public class WinPanelView : MonoBehaviour
 
     public void Show()
     {
-        _animator.Play(ShowAnimation);
+        _animator.Play(StaticFields.ShowAnimation);
         _winSound.Play();
     }
 
@@ -67,7 +63,7 @@ public class WinPanelView : MonoBehaviour
             _nextLevelButton.interactable = true;
     }
 
-    public void Remove() => _animator.Play(RemoveAnimation);
+    public void Remove() => _animator.Play(StaticFields.RemoveAndStartTimeAnimation);
 
     private void OnNextLevelButtonClick()
     {
@@ -85,7 +81,7 @@ public class WinPanelView : MonoBehaviour
     {
         for (int i = 0; i < starsCount; i++)
         {
-            _stars[i].Play(StarAnimation);
+            _stars[i].Play(StaticFields.StarAnimation);
             yield return new WaitForSeconds(_starsAnamtionDelay);
         }
 

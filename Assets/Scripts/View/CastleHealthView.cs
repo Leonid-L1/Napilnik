@@ -37,13 +37,9 @@ public class CastleHealthView : MonoBehaviour
             _slider.value = Mathf.MoveTowards(_slider.value, newValue, _step);
 
             if (_slider.value == newValue)
-            {
                 yield break;
-            }
             else
-            {
                 yield return null;
-            }
         }
     }
 }

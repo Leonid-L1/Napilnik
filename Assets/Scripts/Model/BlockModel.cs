@@ -17,5 +17,5 @@ public class BlockModel
         _collider.enabled = false;
         _dragCollider.enabled = false;
     }
-    
+  
 }

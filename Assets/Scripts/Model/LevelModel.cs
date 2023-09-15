@@ -2,18 +2,14 @@ using System;
 using UnityEngine;
 public class LevelModel
 {
-    private const string IsCompleted = "isCompleted";
-    private const string NotCompleted = "notCompleted";
-    private const string StarsCount = "starsCount";
-
     private Loading _loader;
     private int _levelNumber;
     private bool _isUnclocked;
     private bool _isCompleted;
     private int _starsCount;
     
-    private string _isCompleteKey => _levelNumber.ToString() + IsCompleted;
-    private string _starsCountKey => _levelNumber.ToString() + StarsCount;
+    private string _isCompleteKey => _levelNumber.ToString() + StaticFields.IsCompleted;
+    private string _starsCountKey => _levelNumber.ToString() + StaticFields.StarsCount;
 
     public event Action<int, bool,bool, int> ConditionsSet;
 
@@ -36,12 +32,12 @@ public class LevelModel
     {
         if (PlayerPrefs.HasKey(_isCompleteKey))
         {
-            _isCompleted = PlayerPrefs.GetString(_isCompleteKey) == IsCompleted;
+            _isCompleted = PlayerPrefs.GetString(_isCompleteKey) == StaticFields.IsCompleted;
             _starsCount = PlayerPrefs.GetInt(_starsCountKey);
         }
         else
         {
-            PlayerPrefs.SetString(_isCompleteKey, NotCompleted);
+            PlayerPrefs.SetString(_isCompleteKey, StaticFields.NotCompleted);
             PlayerPrefs.SetInt(_starsCountKey, 0);
             _starsCount = 0;
         }

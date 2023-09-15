@@ -1,7 +1,5 @@
 public class PausePanelModel 
 {
-    private const int MainMenuIndex = 0;
-
     private Loading _loader;
     private int _currentLevelIndex;
 
@@ -11,7 +9,7 @@ public class PausePanelModel
         _loader = loader;
     }
 
-    public void LoadMenu() => _loader.Load(MainMenuIndex);
+    public void LoadMenu() => _loader.Load(StaticFields.MainMenuIndex);
 
     public void RestartLevel() => _loader.Load(_currentLevelIndex);
 }

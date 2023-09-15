@@ -1,4 +1,3 @@
-
 public class CharacterAnimationPresenter : IPresenter
 {
     private CharacterAnimationModel _model;

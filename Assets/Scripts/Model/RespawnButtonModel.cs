@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class RespawnButtonModel : Updatable
 {   
-    private const string Push = "Click";
-
     private Animator _animator;
 
     private float _reloadTime;
@@ -31,7 +29,7 @@ public class RespawnButtonModel : Updatable
 
     public void PushButton()
     {
-        _animator.Play(Push);
+        _animator.Play(StaticFields.PushAnimation);
         _isMoving = true;
         _elapsedTime = 0;
     }

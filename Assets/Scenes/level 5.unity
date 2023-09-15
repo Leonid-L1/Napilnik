@@ -5644,6 +5644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _settings: {fileID: 11400000, guid: fd866749ad56ab3449c89cb3a14170e7, type: 2}
+  _settingsPanel: {fileID: 7881646100319259982}
   _respawnButton: {fileID: 2423944912180042260}
   _warriorSpawner: {fileID: 1221894330}
   _losePanel: {fileID: 925217013}
@@ -40116,7 +40117,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 85.9
+  m_fontSize: 87.75
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -40387,7 +40388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3318797803800228460, guid: 80b78f6a1a4b22c4fa9a0cc20176d562, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 565.2658
+      value: 378.7106
       objectReference: {fileID: 0}
     - target: {fileID: 3318797803800228460, guid: 80b78f6a1a4b22c4fa9a0cc20176d562, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40423,7 +40424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3318797803800228460, guid: 80b78f6a1a4b22c4fa9a0cc20176d562, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.5
+      value: -13
       objectReference: {fileID: 0}
     - target: {fileID: 3318797803800228460, guid: 80b78f6a1a4b22c4fa9a0cc20176d562, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -40492,6 +40493,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5766e3e09463533449e8d22d20f0d932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7881646100319259982 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3318797803800228467, guid: 80b78f6a1a4b22c4fa9a0cc20176d562, type: 3}
+  m_PrefabInstance: {fileID: 7881646100319259980}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1a23f9f4cafe24cac631c1ae80fd0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7985687844424933228 stripped

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class LosePanelModel 
 {
-    private const int MainMenuIndex = 0;
-
     private Loading _loader;
     private int _currentLevelIndex;
 
@@ -15,13 +13,7 @@ public class LosePanelModel
         _loader = loader;
     }
 
-    public void LoadMainMenu() => _loader.Load(MainMenuIndex);
+    public void LoadMainMenu() => _loader.Load(StaticFields.MainMenuIndex);
 
     public void RestartLevel() => _loader.Load(_currentLevelIndex);
-
-    public void Revive()
-    {
-
-    }
-    
 }

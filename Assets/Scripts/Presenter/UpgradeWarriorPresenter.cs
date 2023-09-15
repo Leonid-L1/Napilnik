@@ -1,4 +1,4 @@
-public class UpgradeWarriorPresenter
+public class UpgradeWarriorPresenter : IPresenter
 {
     private UpgradeWarriorView _view;
     private UpgradeWarriorModel _model;

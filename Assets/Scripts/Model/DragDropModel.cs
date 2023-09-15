@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class DragDropModel 
 {
-    private const float MinPitch = 0.85f;
-    private const float MaxPitch = 1;
-
     private AudioSource _dragSound;
     private AudioSource _dropSound;
     private GameObject _pointer;
@@ -69,7 +66,7 @@ public class DragDropModel
 
     private void PlayPitchedSound(AudioSource sound)
     {
-        sound.pitch = UnityEngine.Random.Range(MinPitch, MaxPitch);
+        sound.pitch = UnityEngine.Random.Range(StaticFields.MinPitch, StaticFields.MaxPitch);
         sound.Play();
     }
 }

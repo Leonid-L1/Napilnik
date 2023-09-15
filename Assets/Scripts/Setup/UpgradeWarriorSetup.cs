@@ -5,8 +5,6 @@ using UnityEngine.UI;
 [RequireComponent(typeof(UpgradeWarriorView))]
 public class UpgradeWarriorSetup : MonoBehaviour
 {
-    private const int MaxLevel = 5;
-
     [SerializeField] private WarriorSpawnerView _spawnerView;
     [SerializeField] private GameObject _starPrefab;
     [SerializeField] private HorizontalLayoutGroup _starsContainer;
@@ -19,8 +17,8 @@ public class UpgradeWarriorSetup : MonoBehaviour
 
     public void Init(int currentMaxLevel)
     {
-        if (currentMaxLevel > MaxLevel)
-            currentMaxLevel = MaxLevel;
+        if (currentMaxLevel > StaticFields.MaxWarriorLevel)
+            currentMaxLevel = StaticFields.MaxWarriorLevel;
 
         for (int i = 0; i < currentMaxLevel; i++)
         {

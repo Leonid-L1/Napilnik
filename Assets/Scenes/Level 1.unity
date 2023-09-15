@@ -5818,6 +5818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _settings: {fileID: 11400000, guid: aca492b3f9a0c1043a9c51c739b63ba9, type: 2}
+  _settingsPanel: {fileID: 7881646100319259981}
   _respawnButton: {fileID: 2423944912180042260}
   _warriorSpawner: {fileID: 1221894334}
   _losePanel: {fileID: 925217013}
@@ -12918,6 +12919,7 @@ GameObject:
   - component: {fileID: 1046993067}
   - component: {fileID: 1046993069}
   - component: {fileID: 1046993068}
+  - component: {fileID: 1046993070}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -12942,7 +12944,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 0.085}
   m_AnchorMax: {x: 0.9577253, y: 0.32700002}
-  m_AnchoredPosition: {x: -1.1793213, y: 1.0900879}
+  m_AnchoredPosition: {x: -1.1793213, y: -15}
   m_SizeDelta: {x: -1.6414185, y: 0.1802063}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1046993068
@@ -12965,10 +12967,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '
-
-    if the number of soldiers on the field is greater than the specified
-    value, you won''t be able to put new blocks on the platform'
+  m_text: if the number of soldiers on the field is greater than the specified value,
+    you won't be able to put new blocks on the platform
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
   m_sharedMaterial: {fileID: 942589445191879500, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
@@ -12995,10 +12995,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.4
-  m_fontSizeBase: 29.4
+  m_fontSize: 39.65
+  m_fontSizeBase: 30.34
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 19.6
   m_fontSizeMax: 40.9
   m_fontStyle: 17
@@ -13045,6 +13045,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046993066}
   m_CullTransparentMesh: 1
+--- !u!114 &1046993070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046993066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: EducationPanel
+  FallbackText: 
 --- !u!1001 &1054480748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22315,7 +22329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: English
+  currentLanguage: Russian
   detectLanguage: 1
   defaultLanguage: 
   saveLoad: 1
@@ -22332,9 +22346,11 @@ MonoBehaviour:
   - Root: {fileID: 102900000, guid: 129e8e71900e7224d99f7bfabb7d4af3, type: 3}
     sources:
     - {fileID: 4674057211102635883, guid: c645475f1bf30f64f9a9490c600b4566, type: 3}
+    - {fileID: 6122615163225568965, guid: 4cf597a576d22a3428c60b60f6aea71a, type: 3}
     - {fileID: 4601722589658270113, guid: db2e42efc3593174ab3db1f86986aeaa, type: 3}
     - {fileID: 6470807353258422083, guid: 8fd41f94fb26b3745a565f110233392c, type: 3}
     - {fileID: 9213031790365040436, guid: e21d609640d687a43a8095563989ca9c, type: 3}
+    - {fileID: 6122615163225568965, guid: b9c686fd7e6f63e49b1e47a948b8670b, type: 3}
     - {fileID: 4225983559964728897, guid: 1c8fe8efa67ac92409d8fa32454c9b12, type: 3}
     - {fileID: 1419433296489351908, guid: 78143ff56f43dea419420fa38fa0f560, type: 3}
     - {fileID: 7826805586840255533, guid: 12b617b6a36d81b45b4125a29d8c9de8, type: 3}
@@ -24630,6 +24646,7 @@ GameObject:
   - component: {fileID: 1827158858}
   - component: {fileID: 1827158857}
   - component: {fileID: 1827158859}
+  - component: {fileID: 1827158860}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -24774,6 +24791,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1827158860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827158855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Push
+  FallbackText: 
 --- !u!1001 &1827837096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40895,6 +40926,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1548640623}
+    - target: {fileID: 1787741608542485458, guid: 68495d8ccb7f8dc4a854f65c99fa7c27, type: 3}
+      propertyPath: FallbackText
+      value: MENU
+      objectReference: {fileID: 0}
     - target: {fileID: 1787741608793653091, guid: 68495d8ccb7f8dc4a854f65c99fa7c27, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -41174,7 +41209,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Choose An Upgrade
+  m_text: "\u0423\u043B\u0443\u0447\u0448\u0430\u0439 \u0432\u043E\u0438\u043D\u043E\u0432"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
   m_sharedMaterial: {fileID: 942589445191879500, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
@@ -41201,7 +41236,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 85.9
+  m_fontSize: 87.75
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -41579,7 +41614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3318797803800228460, guid: 80b78f6a1a4b22c4fa9a0cc20176d562, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 565.2658
+      value: 378.7106
       objectReference: {fileID: 0}
     - target: {fileID: 3318797803800228460, guid: 80b78f6a1a4b22c4fa9a0cc20176d562, type: 3}
       propertyPath: m_LocalPosition.x
@@ -41615,7 +41650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3318797803800228460, guid: 80b78f6a1a4b22c4fa9a0cc20176d562, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.5
+      value: -13
       objectReference: {fileID: 0}
     - target: {fileID: 3318797803800228460, guid: 80b78f6a1a4b22c4fa9a0cc20176d562, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -41675,6 +41710,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80b78f6a1a4b22c4fa9a0cc20176d562, type: 3}
+--- !u!114 &7881646100319259981 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3318797803800228467, guid: 80b78f6a1a4b22c4fa9a0cc20176d562, type: 3}
+  m_PrefabInstance: {fileID: 7881646100319259980}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1a23f9f4cafe24cac631c1ae80fd0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7985687844424933228 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8419095091252354717, guid: 4ec9075bb40d2544899ebacd850a7a85, type: 3}

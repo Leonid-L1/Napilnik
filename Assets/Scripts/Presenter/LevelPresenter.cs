@@ -1,4 +1,4 @@
-public class LevelPresenter
+public class LevelPresenter : IPresenter
 {
     private LevelModel _model;
     private LevelView _view;

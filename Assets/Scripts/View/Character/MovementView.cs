@@ -18,6 +18,5 @@ public abstract class MovementView : MonoBehaviour
 
     private void LateUpdate() => InputUpdated?.Invoke(_input.MovementInput);
 
-    public abstract void Move(Vector3 direction);
-    
+    public abstract void Move(Vector3 direction);   
 }

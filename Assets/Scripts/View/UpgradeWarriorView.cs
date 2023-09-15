@@ -6,8 +6,6 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class UpgradeWarriorView : MonoBehaviour
 {
-    private const string StarAnimation = "UpgradeTierStar";
-
     private Button _upgradeButton;
     private List<Animator> _activeStars;
     private bool _maxLevelReached= false;
@@ -38,7 +36,7 @@ public class UpgradeWarriorView : MonoBehaviour
         _upgradeButton.interactable = true;
     }
     
-    public void PlayStarAnimation(int currentLevel) => _activeStars[currentLevel - 1].Play(StarAnimation);
+    public void PlayStarAnimation(int currentLevel) => _activeStars[currentLevel - 1].Play(StaticFields.UpgradeStarAnimation);
 
     private void OnUpgradeButtonClicked()
     { 

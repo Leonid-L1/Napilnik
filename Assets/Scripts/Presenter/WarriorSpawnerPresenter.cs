@@ -1,4 +1,4 @@
-public class WarriorSpawnerPresenter
+public class WarriorSpawnerPresenter : IPresenter
 {
     private WarriorSpawnerView _view;
     private WarriorSpawnerModel _model;

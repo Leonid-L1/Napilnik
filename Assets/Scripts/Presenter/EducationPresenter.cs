@@ -1,4 +1,4 @@
-public class EducationPresenter 
+public class EducationPresenter : IPresenter
 {
     private EducationModel _model;
     private EducationView _view;

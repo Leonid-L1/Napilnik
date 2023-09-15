@@ -4,6 +4,7 @@ using UnityEngine;
 public class DragDropInput : MonoBehaviour
 {   
     private bool _enabled = true;
+
     public bool IsMouseDown { get; private set; }
 
     public event Action MouseUp;
@@ -29,5 +30,4 @@ public class DragDropInput : MonoBehaviour
     }
 
     public void EnableInput() => _enabled = true;
-
 }

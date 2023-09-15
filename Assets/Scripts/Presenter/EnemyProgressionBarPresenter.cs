@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyProgressionBarPresenter 
+public class EnemyProgressionBarPresenter : IPresenter
 {
     private EnemyProgressionBarModel _model;
     private EnemyProgressionBarView _view;

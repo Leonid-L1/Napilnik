@@ -5,9 +5,6 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Animator))]
 public class UpgradePanelView : Panel
 {
-    private const string ShowPanelAnimation = "ShowUpgradePanel";
-    private const string RemovePanelAnimation = "RemoveUpgradePanel";
-
     [SerializeField] private UpgradeWarriorView _meleeUpgrade;
     [SerializeField] private UpgradeWarriorView _rangeUpgrade;
 
@@ -35,7 +32,7 @@ public class UpgradePanelView : Panel
     public void ShowPanel()
     {   
         _isOnScreen = true;
-        _animator.Play(ShowPanelAnimation);
+        _animator.Play(StaticFields.ShowUpgradePanel);
         _meleeUpgrade.SetAsInteractable();
         _rangeUpgrade.SetAsInteractable();
         _upgradeSound.Play();
@@ -44,6 +41,6 @@ public class UpgradePanelView : Panel
     public void RemovePanel(Button button)
     {
         _isOnScreen = false;
-        _animator.Play(RemovePanelAnimation);
+        _animator.Play(StaticFields.RemoveUpgradePanel);
     }
 }

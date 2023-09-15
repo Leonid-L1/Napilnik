@@ -5,8 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(PlatformView))]
 public class PlatformSetup : MonoBehaviour
 {
-    private const string NoCellComponentMessage = "Gameobjects you put in this List should contain CellView component ";
-
     [SerializeField] private List<GameObject> _cellObjects;
     [SerializeField] private Timer _timer;
     [SerializeField] private WarriorSpawnerView _spawnView;
@@ -44,7 +42,7 @@ public class PlatformSetup : MonoBehaviour
             if (_cellObjects[i].TryGetComponent(out CellView cell) == false)
             {
                 _cellObjects = new List<GameObject>();
-                throw new Exception(NoCellComponentMessage);
+                throw new Exception(StaticFields.NoCellComponentMessage);
             }
         }
     }

@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class WinPanelModel
 {
-    private const string IsCompleted = "isCompleted";
-    private const string StarsCount = "starsCount";
-
     private const int MainMenuIndex = 0;
     private const double BadResult = 0.3f;
     private const double GoodResult = 0.6f;
@@ -17,8 +14,8 @@ public class WinPanelModel
     private int _nextLevelIndex;
 
     private int _levelNumber => _nextLevelIndex - 1;
-    private string _isCompleteKey => _levelNumber.ToString() + IsCompleted;
-    private string _starsCountKey => _levelNumber.ToString() + StarsCount;
+    private string _isCompleteKey => _levelNumber.ToString() + StaticFields.IsCompleted;
+    private string _starsCountKey => _levelNumber.ToString() + StaticFields.StarsCount;
 
     private  List<int> StarsAtResult = new List<int>(4) { 0,1,2,3};
 
@@ -58,7 +55,7 @@ public class WinPanelModel
     }
     private void SaveResult(int starsCount)
     {
-        PlayerPrefs.SetString(_isCompleteKey, IsCompleted);
+        PlayerPrefs.SetString(_isCompleteKey, StaticFields.IsCompleted);
         PlayerPrefs.SetInt(_starsCountKey, starsCount);
     }
 

@@ -7,9 +7,6 @@ using UnityEngine.UI;
 [RequireComponent (typeof(TimeScaleController))]
 public class PausePanelView : Panel
 {
-    private const string ShowAnimation = "ShowWithStopTime";
-    private const string RemoveAnimation = "RemoveAndStartTime";
-
     [SerializeField] private Button _pauseButton;
     [SerializeField] private Button _continueButton;
     [SerializeField] private Button _restartButton;
@@ -58,11 +55,11 @@ public class PausePanelView : Panel
             button.interactable = true;
     }
 
-    private void OnPauseButtonClick() => _animator.Play(ShowAnimation);
+    private void OnPauseButtonClick() => _animator.Play(StaticFields.ShowWithStopTimeAnimation);
 
     private void OnContinueBittonClick()
     {
-        _animator.Play(RemoveAnimation);
+        _animator.Play(StaticFields.RemoveAndStartTimeAnimation);
 
         foreach (Button button in _buttons)
             button.interactable = false;
@@ -84,7 +81,5 @@ public class PausePanelView : Panel
         MenuRequested?.Invoke();
 
         _isOnScreen = false;
-    }
-
-    //private void Update() => Debug.Log(_isOnScreen);   
+    } 
 }

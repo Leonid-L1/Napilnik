@@ -1,4 +1,4 @@
-public class RespawnButtonPresenter
+public class RespawnButtonPresenter : IPresenter
 {
     private RespawnButtonModel _model;
     private RespawnButtonView _view;

@@ -1,4 +1,3 @@
-
 public class CharacterHealthPresenter : IPresenter
 {
     private CharacterHealthModel _model;
@@ -15,14 +14,12 @@ public class CharacterHealthPresenter : IPresenter
     public void Enable()
     {
         _view.DamagedRecieved += _model.RecieveDamage;
-        _model.Death += _view.SetToDestroy;
-        _model.Death += _animationModel.OnDeath;      
+        _model.Death += _view.SetToDestroy;     
     }
 
     public void Disable()
     {
         _view.DamagedRecieved -= _model.RecieveDamage;
         _model.Death -= _view.SetToDestroy;
-        _model.Death -= _animationModel.OnDeath;
     }
 }

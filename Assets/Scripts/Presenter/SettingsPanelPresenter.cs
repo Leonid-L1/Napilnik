@@ -1,4 +1,4 @@
-public class SettingsPanelPresenter 
+public class SettingsPanelPresenter : IPresenter
 {
     private SettingsPanelView _view;
     private SettingsPanelModel _model;

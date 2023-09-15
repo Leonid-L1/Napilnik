@@ -1,4 +1,4 @@
-public class PausePanelPresenter 
+public class PausePanelPresenter : IPresenter
 {
     private PausePanelModel _model;
     private PausePanelView _view;

@@ -6,8 +6,6 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class BlockSetup : MonoBehaviour
 {
-    private const string NoCubeComponentMessage = "Gameobjects you put in this List should contain CubeView component";
-
     [SerializeField] private List<GameObject> _cubesGameobjects = new List<GameObject>();
     [SerializeField] private BoxCollider _dragCollider;
 
@@ -40,7 +38,7 @@ public class BlockSetup : MonoBehaviour
             if (_cubesGameobjects[i].TryGetComponent(out CubeView cube) == false)
             {
                 _cubesGameobjects = new List<GameObject>();
-                throw new Exception(NoCubeComponentMessage);
+                throw new Exception(StaticFields.NoCubeComponentMessage);
             }
         }
     }

@@ -6,6 +6,7 @@ public class LevelSetup : MonoBehaviour
     [SerializeField] private LevelView _previousLevelView;
     [SerializeField] private int _levelNumber;
     [SerializeField] private Loading _loader;
+
     private bool _isItFirstLevel => _levelNumber == 1;
     private LevelPresenter _presenter;
     private LevelModel _model;
