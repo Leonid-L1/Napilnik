@@ -12139,7 +12139,7 @@ MonoBehaviour:
   _timer: {fileID: 963194231}
   _dragSound: {fileID: 790407473}
   _dropSound: {fileID: 1146953564}
-  _pointer: {fileID: 0}
+  _pointer: {fileID: 1686946839}
   _panels:
   - {fileID: 1787741608584087704}
   - {fileID: 7881646100319259981}
@@ -21800,7 +21800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: English
+  currentLanguage: Russian
   detectLanguage: 1
   defaultLanguage: 
   saveLoad: 1
@@ -22115,6 +22115,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1778994357615247706, guid: ef62619642b0df743b22dd5120c6ac4d, type: 3}
   m_PrefabInstance: {fileID: 1682656521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1686946839 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 704326010000002392, guid: 451d76741c0411049a129cc6cbc0a57c, type: 3}
+  m_PrefabInstance: {fileID: 1886908602}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1687209583
 PrefabInstance:
@@ -40091,7 +40096,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Choose An Upgrade
+  m_text: "\u0423\u043B\u0443\u0447\u0448\u0430\u0439 \u0432\u043E\u0438\u043D\u043E\u0432"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
   m_sharedMaterial: {fileID: 942589445191879500, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
@@ -40118,7 +40123,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 87.75
+  m_fontSize: 88.2
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1

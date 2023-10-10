@@ -15,7 +15,6 @@ public class CharacterAnimationPresenter : IPresenter
         _view.Attacking += _model.OnAttack;
         _model.VelocityChanged += _view.SetFloat;
         _model.Attack += _view.SetTrigger;
-        _model.Death += _view.OnDeath;
     }
 
     public void Disable()
@@ -24,6 +23,5 @@ public class CharacterAnimationPresenter : IPresenter
         _view.Attacking -= _model.OnAttack;
         _model.VelocityChanged -= _view.SetFloat;
         _model.Attack -= _view.SetTrigger;
-        _model.Death -= _view.OnDeath;
     }
 }

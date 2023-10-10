@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Next Level
+  m_text: "\u0421\u043B\u0435\u0434 \u0423\u0440\u043E\u0432\u0435\u043D\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
   m_sharedMaterial: {fileID: 942589445191879500, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 45.75
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 120.0861, y: 29.637936, z: 121.6113, w: 46.08891}
+  m_margin: {x: 139.22118, y: 34.37477, z: 139.40839, w: 51.762535}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -396,10 +396,10 @@ RectTransform:
   m_Father: {fileID: 7449951319162129411}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.136, y: 0.14247732}
-  m_AnchorMax: {x: 0.86200005, y: 0.35552272}
-  m_AnchoredPosition: {x: 1, y: 0}
-  m_SizeDelta: {x: 7, y: 1}
+  m_AnchorMin: {x: 0.136, y: 0.1227075}
+  m_AnchorMax: {x: 0.86200005, y: 0.33900002}
+  m_AnchoredPosition: {x: 1, y: 1}
+  m_SizeDelta: {x: 7, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7449951318720071046
 CanvasRenderer:
@@ -562,7 +562,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Victory
+  m_text: "\u041F\u043E\u0431\u0435\u0434\u0430"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
   m_sharedMaterial: {fileID: 942589445191879500, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
@@ -681,7 +681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.73628753}
   m_AnchorMax: {x: 0.5, y: 0.73628753}
-  m_AnchoredPosition: {x: -2, y: 33}
+  m_AnchoredPosition: {x: -2, y: 18}
   m_SizeDelta: {x: 740.0002, y: 139.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7449951319162129410
@@ -995,7 +995,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Menu
+  m_text: "\u041C\u0435\u043D\u044E"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
   m_sharedMaterial: {fileID: 942589445191879500, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}

@@ -12,7 +12,8 @@ public class CastleHealthView : MonoBehaviour
     public int CurrentHealth { get; private set; }
 
     public event Action<Enemy> EnemyEntered;
-    
+    public event Action GameOver;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Enemy enemy))
@@ -28,7 +29,9 @@ public class CastleHealthView : MonoBehaviour
    
     public void OnHealthChanged(int newValue) => StartCoroutine(UpdateSlider(newValue));
 
-    public IEnumerator UpdateSlider(int newValue)
+    public void SetGameOver() => GameOver?.Invoke();
+
+    private IEnumerator UpdateSlider(int newValue)
     {   
         CurrentHealth = newValue;
 

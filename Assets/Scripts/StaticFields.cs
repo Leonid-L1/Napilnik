@@ -1,8 +1,10 @@
-
 public static class StaticFields
 {
     public const int MainMenuIndex = 0;
     public const int MaxWarriorLevel = 5;
+    public const int TopPlayersCount = 5;
+    public const int FirstLevel = 1;
+    public const int LastLevel = 31;
     public const float MaxPitch = 1;
     public const float MinPitch = 0.85f;
     public const float DedaultVolume = 0.75f;
@@ -16,8 +18,10 @@ public static class StaticFields
     public const string PushAnimation = "Click";
     public const string StarAnimation = "Star";
     public const string ShowAnimation = "Show";
+    public const string SimpleShow = "SimpleShow";
     public const string ShowWithStopTimeAnimation =  "ShowWithStopTime";
     public const string RemoveAndStartTimeAnimation = "RemoveAndStartTime";
+    public const string RemoveAnimation = "SimpleRemove";
     public const string UpgradeStarAnimation = "UpgradeTierStar";
     public const string ShowUpgradePanel = "ShowUpgradePanel";
     public const string RemoveUpgradePanel = "RemoveUpgradePanel";
@@ -29,6 +33,14 @@ public static class StaticFields
     public const string TurkishLanguageCode = "tr";
     public const string NoCellComponentMessage = "Gameobjects you put in this List should contain CellView component ";
     public const string NoCubeComponentMessage = "Gameobjects you put in this List should contain CubeView component ";
+    public const string Leaderboard = "Leaderboard";
+    public const string Anonimous = "Anonimous";
+    public const string BestScore = "BestScore";
+    public const string Authorization = "Authorization";
+
+    public const string _emptyPlayerEntryName = "?";
+    public const int emptyPlayerEntryScore = 0;
+    public const int emptyPlayerEntryRank = 0;
 }
-    
+
 

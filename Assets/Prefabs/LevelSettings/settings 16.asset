@@ -18,7 +18,7 @@ MonoBehaviour:
   _maxWarriorCount: 13
   _playerHealth: 13
   _enemiesCount: 30
-  _timeBetweenEnemySpawn: 1.5
-  _maxWariorUpgradeLevel: 4
+  _timeBetweenEnemySpawn: 1.35
+  _maxWariorUpgradeLevel: 2
   _enemyStartSpawnDelay: 5
-  _upgradeCheckPoints: 060000000a0000000e00000012000000
+  _upgradeCheckPoints: 060000000c0000001200000018000000

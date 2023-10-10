@@ -747,8 +747,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3707253a97ebc604eb7c78cfc45faa07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 60
-  _attackDamage: 70
+  _maxHealth: 50
+  _attackDamage: 50
 --- !u!114 &3217506182764244895
 MonoBehaviour:
   m_ObjectHideFlags: 0

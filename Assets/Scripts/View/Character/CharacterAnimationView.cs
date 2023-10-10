@@ -23,6 +23,4 @@ public class CharacterAnimationView : MonoBehaviour
     public void SetFloat(string parameterName, float value) => _animator.SetFloat(parameterName, value);
 
     public void SetTrigger(string parameterName) => _animator.SetTrigger(parameterName);
-
-    public void OnDeath(string parameterName) => Destroy(gameObject);
 }

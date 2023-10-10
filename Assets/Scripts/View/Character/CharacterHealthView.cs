@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class CharacterHealthView : MonoBehaviour
@@ -16,6 +17,6 @@ public class CharacterHealthView : MonoBehaviour
     {       
         Instantiate(_deathEffect,transform.position + _particleOffset ,Quaternion.identity);
         CharacterDies?.Invoke(this);
-        Destroy(gameObject,0.1f);
+        Destroy(gameObject);
     }
 }

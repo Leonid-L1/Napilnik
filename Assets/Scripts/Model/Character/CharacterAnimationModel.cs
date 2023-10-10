@@ -5,7 +5,6 @@ public class CharacterAnimationModel
     private float _velocity;
 
     public event Action<string,float> VelocityChanged;
-    public event Action<string> Death;
     public event Action<string> Attack;
 
     public void SetVelocity(float newVelocity)

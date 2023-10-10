@@ -21,4 +21,4 @@ MonoBehaviour:
   _timeBetweenEnemySpawn: 2
   _maxWariorUpgradeLevel: 1
   _enemyStartSpawnDelay: 4
-  _upgradeCheckPoints: 0400000008000000
+  _upgradeCheckPoints: 07000000

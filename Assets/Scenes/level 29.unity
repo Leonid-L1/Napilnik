@@ -21877,7 +21877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: English
+  currentLanguage: Russian
   detectLanguage: 1
   defaultLanguage: 
   saveLoad: 1
@@ -39757,6 +39757,14 @@ PrefabInstance:
       value: 565.2658
       objectReference: {fileID: 0}
     - target: {fileID: 1787741608004403694, guid: 68495d8ccb7f8dc4a854f65c99fa7c27, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787741608004403694, guid: 68495d8ccb7f8dc4a854f65c99fa7c27, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787741608004403694, guid: 68495d8ccb7f8dc4a854f65c99fa7c27, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -40102,7 +40110,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Choose An Upgrade
+  m_text: "\u0423\u043B\u0443\u0447\u0448\u0430\u0439 \u0432\u043E\u0438\u043D\u043E\u0432"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
   m_sharedMaterial: {fileID: 942589445191879500, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
@@ -40129,7 +40137,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 87.75
+  m_fontSize: 87.8
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -40592,6 +40600,14 @@ PrefabInstance:
     - target: {fileID: 9047979715694112034, guid: fb8ef4cbb37de7a4e8abeccff1ecaf1b, type: 3}
       propertyPath: m_SizeDelta.y
       value: 565.2658
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047979715694112034, guid: fb8ef4cbb37de7a4e8abeccff1ecaf1b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047979715694112034, guid: fb8ef4cbb37de7a4e8abeccff1ecaf1b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047979715694112034, guid: fb8ef4cbb37de7a4e8abeccff1ecaf1b, type: 3}
       propertyPath: m_LocalPosition.x

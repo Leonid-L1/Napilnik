@@ -2,6 +2,7 @@ using System;
 public class CastleHealthModel 
 {
     private int _health;
+
     public event Action<int> HealthChanged;
     public event Action HealthIsGone;
 

@@ -1,7 +1,6 @@
 using UnityEngine;
 
 [RequireComponent(typeof(LosePanelView))]
-
 public class LosePanelSetup : MonoBehaviour
 {
     [SerializeField] private Loading _loader;
@@ -12,12 +11,12 @@ public class LosePanelSetup : MonoBehaviour
 
     private void OnDisable() => _presenter.Disable();
 
-    public void Init(int currentLevelNumber)
+    public void Init(int currentLevelNumber, CastleHealthView health)
     {
         _view = GetComponent<LosePanelView>();
         _view.Init();
         _model = new LosePanelModel(currentLevelNumber, _loader);
-        _presenter = new LosePanelPresenter(_view, _model);
+        _presenter = new LosePanelPresenter(_view, _model, health);
         _presenter.Enable();
     }    
 }

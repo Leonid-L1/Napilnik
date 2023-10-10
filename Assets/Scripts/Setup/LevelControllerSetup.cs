@@ -30,8 +30,8 @@ public class LevelControllerSetup : MonoBehaviour
 
         _respawnButton.Init(_settings.RespawnReloadTime);
         _warriorSpawner.Init(_settings.MaxWarriorCount);
-        _losePanel.Init(_settings.CurrentLevelNumber);
-        _playerHealth.Init(_settings.PlayerHealth, _losePanel.GetComponent<LosePanelView>());
+        _playerHealth.Init(_settings.PlayerHealth);
+        _losePanel.Init(_settings.CurrentLevelNumber, _playerHealth.GetComponent<CastleHealthView>());
         _winPanel.Init(nextLevelIndex, _settings.PlayerHealth,_playerHealth.GetComponent<CastleHealthView>());
         _pausePanel.Init(_settings.CurrentLevelNumber);
         _enemyProgression.Init(_settings.EnemiesCount, _settings.UpgradeCheckPoints, _winPanel.GetComponent<WinPanelView>());

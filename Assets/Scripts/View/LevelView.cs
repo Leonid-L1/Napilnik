@@ -17,7 +17,6 @@ public class LevelView : MonoBehaviour
 
     private void OnEnable() => _levelButton.onClick.AddListener(OnButtonClicked);
 
-
     private void OnDisable() => _levelButton.onClick.RemoveListener(OnButtonClicked);
 
     public void SetStartConditions(int levelNumber,bool isCompleted, bool isUnlocked, int starsCount)
@@ -36,7 +35,8 @@ public class LevelView : MonoBehaviour
             return;
 
         for (int i = 0; i < starsCount; i++)
-            _stars[i].SetActive(true);
+            if(_stars[i] != null)
+                _stars[i].SetActive(true);
     }
 
     private void OnButtonClicked()=> ButtonClicked?.Invoke(); 
