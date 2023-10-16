@@ -4883,7 +4883,7 @@ AudioSource:
   m_GameObject: {fileID: 369280067}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2068330873080600311, guid: 78ae864c59583c34491cfe6df976537e, type: 2}
   m_audioClip: {fileID: 8300000, guid: 6697088f2ea1f2e4184b0e5841801b30, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -40123,7 +40123,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 88.2
+  m_fontSize: 89
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1

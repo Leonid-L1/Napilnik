@@ -7,8 +7,6 @@ public class LevelSetup : MonoBehaviour
     [SerializeField] private int _levelNumber;
     [SerializeField] private Loading _loader;
 
-    private bool _isItFirstOrLastLevel => _levelNumber == 1;
-
     private LevelPresenter _presenter;
     private LevelModel _model;
     private LevelView _view;
@@ -17,14 +15,10 @@ public class LevelSetup : MonoBehaviour
     {   
         _view = GetComponent<LevelView>();
 
-        if(_levelNumber == StaticFields.FirstLevel || _levelNumber == StaticFields.LastLevel)
+        if(_levelNumber == StaticFields.FirstLevel)
             _model = new LevelModel(_levelNumber, true, _loader);
         else
             _model = new LevelModel(_levelNumber, _previousLevelView.IsCompleted, _loader);
-        //if (_previousLevelView != null)
-        //    _model = new LevelModel(_levelNumber, _previousLevelView.IsCompleted, _loader);
-        //else
-        //    _model = new LevelModel(_levelNumber, _isItFirstOrLastLevel, _loader);
 
         _presenter = new LevelPresenter(_model, _view);
         _presenter.Enable();

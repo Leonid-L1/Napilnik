@@ -2636,7 +2636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 704326010000002393, guid: 451d76741c0411049a129cc6cbc0a57c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 5.899999
+      value: 5.9
       objectReference: {fileID: 0}
     - target: {fileID: 704326010000002393, guid: 451d76741c0411049a129cc6cbc0a57c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2644,27 +2644,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 704326010000002393, guid: 451d76741c0411049a129cc6cbc0a57c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.287884
+      value: -11.8
       objectReference: {fileID: 0}
     - target: {fileID: 704326010000002393, guid: 451d76741c0411049a129cc6cbc0a57c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 67.25003
+      value: 25.55
       objectReference: {fileID: 0}
     - target: {fileID: 704326010000002393, guid: 451d76741c0411049a129cc6cbc0a57c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5877853
+      value: 0.9063079
       objectReference: {fileID: 0}
     - target: {fileID: 704326010000002393, guid: 451d76741c0411049a129cc6cbc0a57c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.80901706
+      value: -0.42261827
       objectReference: {fileID: 0}
     - target: {fileID: 704326010000002393, guid: 451d76741c0411049a129cc6cbc0a57c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 704326010000002393, guid: 451d76741c0411049a129cc6cbc0a57c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 704326010000002393, guid: 451d76741c0411049a129cc6cbc0a57c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3200,7 +3200,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &234536553
 PrefabInstance:
@@ -4958,7 +4958,7 @@ AudioSource:
   m_GameObject: {fileID: 369280067}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2068330873080600311, guid: 78ae864c59583c34491cfe6df976537e, type: 2}
   m_audioClip: {fileID: 8300000, guid: 6697088f2ea1f2e4184b0e5841801b30, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -5704,7 +5704,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &428628527
 MonoBehaviour:
@@ -18539,7 +18539,6 @@ MonoBehaviour:
   - {x: -6.5, y: 1, z: -20}
   _blockType1:
   - {fileID: 6520091643839044817, guid: 8dbb455621bf5c84da6ccb5eaa37ee26, type: 3}
-  - {fileID: -9135294838080561961, guid: 2dd32e9d46ff2b445a2ef8f61d7fcc7e, type: 3}
   - {fileID: 1438607304270315780, guid: 4975a6a590a3cc347baf7d1b6d909797, type: 3}
   - {fileID: 8413911271953741634, guid: 02c49d093a08cd548a758548a0b8f462, type: 3}
   - {fileID: -7508206562271745447, guid: b74178ceb2a450d4187ce77138d50b6e, type: 3}
@@ -19116,7 +19115,7 @@ PrefabInstance:
       objectReference: {fileID: 1221894331}
     - target: {fileID: 9203124600473042960, guid: e0077177f960f414dbb6ae05bde7e9fb, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9203124600473042960, guid: e0077177f960f414dbb6ae05bde7e9fb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21881,7 +21880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: English
+  currentLanguage: Russian
   detectLanguage: 1
   defaultLanguage: 
   saveLoad: 1
@@ -22214,7 +22213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8517287185616364011, guid: a59007ccc4bf0674abc9ea310e1df4b3, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8517287185616364011, guid: a59007ccc4bf0674abc9ea310e1df4b3, type: 3}
       propertyPath: m_AnchorMax.x
@@ -40106,7 +40105,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Choose An Upgrade
+  m_text: "\u0423\u043B\u0443\u0447\u0448\u0430\u0439 \u0432\u043E\u0438\u043D\u043E\u0432"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
   m_sharedMaterial: {fileID: 942589445191879500, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
@@ -40133,7 +40132,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 87.75
+  m_fontSize: 89
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1

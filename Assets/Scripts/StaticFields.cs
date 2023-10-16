@@ -37,7 +37,7 @@ public static class StaticFields
     public const string Anonimous = "Anonimous";
     public const string BestScore = "BestScore";
     public const string Authorization = "Authorization";
-
+    public const string BonusLevelEducation = "BonusLevelEducation";
     public const string _emptyPlayerEntryName = "?";
     public const int emptyPlayerEntryScore = 0;
     public const int emptyPlayerEntryRank = 0;

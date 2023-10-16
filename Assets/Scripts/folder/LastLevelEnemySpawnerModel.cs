@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class LastLevelEnemySpawnerModel : Updatable
 {
-    private float _startTimeBetweenSpawn = 1.5f;
+    private float _startTimeBetweenSpawn = 8f;
     private float _timeBetweenSpawn;
-    private float _decreaseStep = 0.02f;
-    private int _enemiesToDecrease = 7;
+    private float _decreaseStep = 0.1f;
+    private int _enemyWavesToDeacrease = 4;
     private float _startDelay = 8f;
+    private int _enemiesInGroup = 5;
     private float _elapsedTime;
-    private int _spawnedCount;
+    private int _spawnedWavesCount;
     private bool _isStarted = false;
     private bool _isSpawnRequired = true;
+    private float _randomCircleRadius = 1.4f;
     private List<CharacterHealthView> _spawned = new List<CharacterHealthView>();
     private GameObject _template;
     private Transform _container;
@@ -37,12 +39,17 @@ public class LastLevelEnemySpawnerModel : Updatable
             return;
 
         if (_elapsedTime >= _timeBetweenSpawn)
-        {
-            SetToSpawn?.Invoke(_template, _container.position, _container);
-            _spawnedCount++;
-            _elapsedTime = 0;
-            DecreaseSpawnPause();
-        }
+            Spawn();
+    }
+
+    public void Spawn()
+    {
+        for (int i = 0; i < _enemiesInGroup; i++)
+            SetToSpawn?.Invoke(_template, RandomStartPosition(), _container);
+
+        _spawnedWavesCount++;
+        _elapsedTime = 0;
+        DecreaseSpawnPause();
     }
 
     public void OnGameEnded() => _isSpawnRequired = false;
@@ -60,10 +67,16 @@ public class LastLevelEnemySpawnerModel : Updatable
 
     private void DecreaseSpawnPause()
     {
-        if(_spawnedCount >= _enemiesToDecrease)
+        if(_spawnedWavesCount >= _enemyWavesToDeacrease)
         {
-            _spawnedCount = 0;
+            _spawnedWavesCount = 0;
             _timeBetweenSpawn -= _decreaseStep;
         }       
+    }
+
+    private Vector3 RandomStartPosition()
+    {
+        Vector3 randomPosition = UnityEngine.Random.insideUnitCircle * _randomCircleRadius;
+        return _container.transform.position + new Vector3(randomPosition.x, randomPosition.z);
     }
 }

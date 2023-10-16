@@ -4959,7 +4959,7 @@ AudioSource:
   m_GameObject: {fileID: 369280067}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2068330873080600311, guid: 78ae864c59583c34491cfe6df976537e, type: 2}
   m_audioClip: {fileID: 8300000, guid: 6697088f2ea1f2e4184b0e5841801b30, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -18547,9 +18547,7 @@ MonoBehaviour:
   - {fileID: 4399397242606188838, guid: 14da6b33f5140e04daf7cff4b33aedca, type: 3}
   - {fileID: 4816342461283015013, guid: 46e41729bdd5e5a4cbf5fb695cceb502, type: 3}
   - {fileID: -7198097241789050368, guid: 06fa41e866de38b4180b75ebd47c29da, type: 3}
-  _blockType2:
-  - {fileID: 7097461689162220438, guid: a43085c5334dfbc468fbc99fea4b92c1, type: 3}
-  - {fileID: -1700859313602847046, guid: 8b2fb17361c2bb24abfead4063518e3b, type: 3}
+  _blockType2: []
   _blockType3:
   - {fileID: 8114147489069528602, guid: b6b7905884081a64188dc77956e703c0, type: 3}
   - {fileID: 2327415170529528376, guid: ce9344472c511be4e9c97f0babff11a7, type: 3}
@@ -21806,7 +21804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: English
+  currentLanguage: Russian
   detectLanguage: 1
   defaultLanguage: 
   saveLoad: 1
@@ -40102,7 +40100,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Choose An Upgrade
+  m_text: "\u0423\u043B\u0443\u0447\u0448\u0430\u0439 \u0432\u043E\u0438\u043D\u043E\u0432"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
   m_sharedMaterial: {fileID: 942589445191879500, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
@@ -40129,7 +40127,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 87.75
+  m_fontSize: 89
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1

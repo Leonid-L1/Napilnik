@@ -35,8 +35,26 @@ public class LevelControllerSetup : MonoBehaviour
         _winPanel.Init(nextLevelIndex, _settings.PlayerHealth,_playerHealth.GetComponent<CastleHealthView>());
         _pausePanel.Init(_settings.CurrentLevelNumber);
         _enemyProgression.Init(_settings.EnemiesCount, _settings.UpgradeCheckPoints, _winPanel.GetComponent<WinPanelView>());
-        _enemySpawner.Init(_settings.TimeBetweenEnemySpawn, _settings.EnemyStartSpawnDelay, _settings.EnemiesCount, _settings.EnemyTemplate, _enemyProgression.GetComponent<EnemyProgressionBarView>());
+        _enemySpawner.Init(_settings.TimeBetweenEnemySpawn, _settings.EnemyStartSpawnDelay, _settings.EnemiesCount,_settings.EnemiesInGroupCount, _settings.EnemyTemplate, _enemyProgression.GetComponent<EnemyProgressionBarView>());
         _upgradeMelee.Init(_settings.MaxWariorUpgradeLevel);
         _upgradeRange.Init(_settings.MaxWariorUpgradeLevel);
+    }
+
+    public void OnApplicationFocus(bool isInFocus)
+    {
+        if (!isInFocus)
+            OnFocusLost();
+        else
+            OnFocusReturned();
+    }
+
+    private void OnFocusLost()
+    {
+        Time.timeScale = 0f;
+    }
+
+    private void OnFocusReturned()
+    {
+        Time.timeScale = 1f;
     }
 }

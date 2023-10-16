@@ -20,5 +20,9 @@ public class SettingsPanelSetup : MonoBehaviour
         _presenter.Enable();
     }
 
-    private void OnDisable() => _presenter.Disable(); 
+    private void OnDisable()
+    {
+        if( _presenter != null )
+            _presenter.Disable();
+    }
 }

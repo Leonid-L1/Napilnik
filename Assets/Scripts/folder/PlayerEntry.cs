@@ -11,7 +11,11 @@ public class PlayerEntry : MonoBehaviour
     public void Init(LeaderboardEntryResponse playerData)
     {   
         if(_name != null)
+        {
+            Debug.Log(playerData.player.publicName);
             _name.text = playerData.player.publicName;
+        }
+            
 
         if(_score != null)
             _score.text = playerData.score.ToString();

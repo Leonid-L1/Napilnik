@@ -15,10 +15,11 @@ MonoBehaviour:
   _currentLevelNumber: 5
   _respawnReloadTime: 1.15
   _enemyTemplate: {fileID: 736602435056203518, guid: c357a6192c5f854419260c54bf218aa8, type: 3}
-  _maxWarriorCount: 6
+  _enemiesInGroupCount: 2
+  _enemyStartSpawnDelay: 2.75
+  _timeBetweenEnemySpawn: 3.75
+  _maxWarriorCount: 5
   _playerHealth: 5
   _enemiesCount: 18
-  _timeBetweenEnemySpawn: 2.15
   _maxWariorUpgradeLevel: 1
-  _enemyStartSpawnDelay: 3.5
   _upgradeCheckPoints: 08000000

@@ -10,6 +10,7 @@ public class LeaderboardSetup : MonoBehaviour
     private LeaderboardView _view;
     private LeaderboardPresenter _presenter;
     private bool _isInited = false;
+
     private void OnDisable()
     {
         if(_presenter != null)

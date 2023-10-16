@@ -4883,7 +4883,7 @@ AudioSource:
   m_GameObject: {fileID: 369280067}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2068330873080600311, guid: 78ae864c59583c34491cfe6df976537e, type: 2}
   m_audioClip: {fileID: 8300000, guid: 6697088f2ea1f2e4184b0e5841801b30, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -18464,13 +18464,10 @@ MonoBehaviour:
   - {x: -6.5, y: 1, z: -20}
   _blockType1:
   - {fileID: 6520091643839044817, guid: 8dbb455621bf5c84da6ccb5eaa37ee26, type: 3}
-  - {fileID: -9135294838080561961, guid: 2dd32e9d46ff2b445a2ef8f61d7fcc7e, type: 3}
   - {fileID: 1438607304270315780, guid: 4975a6a590a3cc347baf7d1b6d909797, type: 3}
   - {fileID: 8413911271953741634, guid: 02c49d093a08cd548a758548a0b8f462, type: 3}
   - {fileID: -7508206562271745447, guid: b74178ceb2a450d4187ce77138d50b6e, type: 3}
   - {fileID: 4399397242606188838, guid: 14da6b33f5140e04daf7cff4b33aedca, type: 3}
-  - {fileID: 4816342461283015013, guid: 46e41729bdd5e5a4cbf5fb695cceb502, type: 3}
-  - {fileID: -7198097241789050368, guid: 06fa41e866de38b4180b75ebd47c29da, type: 3}
   _blockType2:
   - {fileID: 7097461689162220438, guid: a43085c5334dfbc468fbc99fea4b92c1, type: 3}
   - {fileID: -1700859313602847046, guid: 8b2fb17361c2bb24abfead4063518e3b, type: 3}
@@ -21806,7 +21803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: English
+  currentLanguage: Russian
   detectLanguage: 1
   defaultLanguage: 
   saveLoad: 1
@@ -40102,7 +40099,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Choose An Upgrade
+  m_text: "\u0423\u043B\u0443\u0447\u0448\u0430\u0439 \u0432\u043E\u0438\u043D\u043E\u0432"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
   m_sharedMaterial: {fileID: 942589445191879500, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
@@ -40129,7 +40126,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 87.75
+  m_fontSize: 89
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1
