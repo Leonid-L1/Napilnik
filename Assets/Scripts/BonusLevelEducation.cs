@@ -4,7 +4,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Animator))]
 public class BonusLevelEducation : MonoBehaviour
 {
-    [SerializeField] private LeaderboardSetup _leaderBoard;
+    [SerializeField] private AuthorizationPanel _authorizationPanel;
     [SerializeField] private Button _exitButton;
 
     private Animator _animator;
@@ -25,13 +25,13 @@ public class BonusLevelEducation : MonoBehaviour
         }
         else
         {
-            _leaderBoard.Init();
+            _authorizationPanel.Show();
         }
     }
 
     private void OnExitButtonClick() 
     {   
         _animator.Play(StaticFields.RemoveAnimation);
-        _leaderBoard.Init();
+        _authorizationPanel.Show();
     }
 }

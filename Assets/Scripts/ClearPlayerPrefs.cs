@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class ClearPlayerPrefs : MonoBehaviour
 {
-    private void Start()
-    {
-        PlayerPrefs.DeleteAll();
-    }
+    private void Start() => PlayerPrefs.DeleteAll();
 }

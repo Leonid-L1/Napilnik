@@ -1,22 +1,17 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(LeaderboardView))]
+[RequireComponent(typeof(LeaderboardModel))]
 public class LeaderboardSetup : MonoBehaviour
 {
-    [SerializeField] private PlayerEntry _template;
-    [SerializeField] private PlayerEntry _playerScore; 
+    //[SerializeField] private List<PlayerEntry> _entries;
+    //[SerializeField] private PlayerEntry _playerScore; 
 
-    private LeaderboardModel _model;
     private LeaderboardView _view;
-    private LeaderboardPresenter _presenter;
+    private LeaderboardModel _model;
     private bool _isInited = false;
-
-    private void OnDisable()
-    {
-        if(_presenter != null)
-            _presenter.Disable();
-    }
-    
+   
     public void Init()
     {
         if (!_isInited)
@@ -28,11 +23,9 @@ public class LeaderboardSetup : MonoBehaviour
     private void Compose()
     {
         _view = GetComponent<LeaderboardView>();
-        _model = new LeaderboardModel(_template, _playerScore);
-        _presenter = new LeaderboardPresenter(_view, _model);
+        _model = GetComponent<LeaderboardModel>();
         _view.Show();
-        _presenter.Enable();
-        _model.Start();
+        _model.Init();
         _isInited = true;
     }
 }

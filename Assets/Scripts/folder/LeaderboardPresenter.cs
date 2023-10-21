@@ -13,17 +13,12 @@ public class LeaderboardPresenter
     public void Enable()
     {
         _enabled = true;      
-        _model.EntryCreateRequested += _view.CreateEntry;
-        _view.EntryCreated += _model.AddPlayerEntry;  
     }
 
     public void Disable()
     {   
         if(!_enabled)
             return;
-
-        _model.EntryCreateRequested -= _view.CreateEntry;
-        _view.EntryCreated -= _model.AddPlayerEntry;
         _enabled = false;
     }
 }

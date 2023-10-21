@@ -6,7 +6,6 @@ using Lean.Localization;
 public class SettingsPanelModel 
 {
     private AudioMixerGroup _mixer;
-    private float _logarithmicMultiplicator = 20;
 
     public event Action<float, float> StartVolumeSet;
 
@@ -38,13 +37,13 @@ public class SettingsPanelModel
     }
     public void ChangeMusicVolume(float value)
     {
-        _mixer.audioMixer.SetFloat(StaticFields.MusicVolume, MathF.Log10(value) * _logarithmicMultiplicator);
+        _mixer.audioMixer.SetFloat(StaticFields.MusicVolume, LogarithmicMultiplicated(value));
         PlayerPrefs.SetFloat(StaticFields.MusicVolume, value);
     }
 
     public void ChangeEffectsVolume(float value)
     {
-        _mixer.audioMixer.SetFloat(StaticFields.EffectsVolume, MathF.Log10(value) * _logarithmicMultiplicator);
+        _mixer.audioMixer.SetFloat(StaticFields.EffectsVolume, LogarithmicMultiplicated(value));
         PlayerPrefs.SetFloat(StaticFields.EffectsVolume, value);
     }
 
@@ -56,9 +55,18 @@ public class SettingsPanelModel
         if (PlayerPrefs.HasKey(StaticFields.EffectsVolume) == false)
             PlayerPrefs.SetFloat(StaticFields.EffectsVolume, StaticFields.DedaultVolume);
 
-        _mixer.audioMixer.SetFloat(StaticFields.MusicVolume, MathF.Log10(PlayerPrefs.GetFloat(StaticFields.MusicVolume)) * _logarithmicMultiplicator);
-        _mixer.audioMixer.SetFloat(StaticFields.EffectsVolume, MathF.Log10(PlayerPrefs.GetFloat(StaticFields.EffectsVolume)) * _logarithmicMultiplicator);
+        //_mixer.audioMixer.SetFloat(StaticFields.MusicVolume, MathF.Log10(PlayerPrefs.GetFloat(StaticFields.MusicVolume)) * StaticFields.LogarithmicMultiplicator);
+        //_mixer.audioMixer.SetFloat(StaticFields.EffectsVolume, MathF.Log10(PlayerPrefs.GetFloat(StaticFields.EffectsVolume)) * StaticFields.LogarithmicMultiplicator);
+
+        _mixer.audioMixer.SetFloat(StaticFields.MusicVolume, LogarithmicMultiplicated(PlayerPrefs.GetFloat(StaticFields.MusicVolume)));
+        _mixer.audioMixer.SetFloat(StaticFields.EffectsVolume, LogarithmicMultiplicated(PlayerPrefs.GetFloat(StaticFields.EffectsVolume)));
 
         StartVolumeSet?.Invoke(PlayerPrefs.GetFloat(StaticFields.MusicVolume), PlayerPrefs.GetFloat(StaticFields.EffectsVolume));
+    }
+
+    private float LogarithmicMultiplicated(float usualValue)
+    {
+        float LogarithmicValue = MathF.Log10(usualValue) * StaticFields.LogarithmicMultiplicator;
+        return LogarithmicValue;
     }
 }

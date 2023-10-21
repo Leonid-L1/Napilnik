@@ -39,22 +39,4 @@ public class LevelControllerSetup : MonoBehaviour
         _upgradeMelee.Init(_settings.MaxWariorUpgradeLevel);
         _upgradeRange.Init(_settings.MaxWariorUpgradeLevel);
     }
-
-    public void OnApplicationFocus(bool isInFocus)
-    {
-        if (!isInFocus)
-            OnFocusLost();
-        else
-            OnFocusReturned();
-    }
-
-    private void OnFocusLost()
-    {
-        Time.timeScale = 0f;
-    }
-
-    private void OnFocusReturned()
-    {
-        Time.timeScale = 1f;
-    }
 }

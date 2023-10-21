@@ -22,14 +22,26 @@ public class LevelView : MonoBehaviour
     public void SetStartConditions(int levelNumber,bool isCompleted, bool isUnlocked, int starsCount)
     {   
         IsCompleted = isCompleted;
-        _levelNumber.text = levelNumber.ToString();
+        
+        if(_levelNumber!= null)
+            _levelNumber.text = levelNumber.ToString();
 
         _levelButton.interactable = isUnlocked;
 
         if (isUnlocked)
+        {
             _lockImage.enabled = false;
+            if (_levelNumber != null)
+                _levelNumber.gameObject.SetActive(true);
+        }
+
         else
+        {
             _lockImage.enabled = true;
+            if (_levelNumber != null)
+                _levelNumber.gameObject.SetActive(false);
+        }
+            
        
         if (starsCount == 0)
             return;

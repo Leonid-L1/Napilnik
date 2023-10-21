@@ -10,8 +10,6 @@ public class LeaderboardView : MonoBehaviour
 
     private Animator _animator;
 
-    public event Action<PlayerEntry> EntryCreated;
-
     private void Awake() => _animator = GetComponent<Animator>();
 
     private void OnEnable() => _closeButton.onClick.AddListener(Close);
@@ -19,12 +17,6 @@ public class LeaderboardView : MonoBehaviour
     private void OnDisable() => _closeButton.onClick.RemoveListener(Close);
 
     public void Show() => _animator.Play(StaticFields.SimpleShow);
-
-    public void CreateEntry(PlayerEntry template)
-    {       
-        var newEntry = Instantiate(template, _entriesContainer);
-        EntryCreated?.Invoke(newEntry);
-    }
 
     private void Close() => _animator.Play(StaticFields.RemoveAnimation);
 }

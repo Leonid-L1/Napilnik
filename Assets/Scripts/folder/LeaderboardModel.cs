@@ -1,42 +1,47 @@
-using System;
+using UnityEngine;
+using TMPro;
 using Agava.YandexGames;
 using System.Collections.Generic;
+using Lean.Localization;
 
-public class LeaderboardModel
+public class LeaderboardModel : MonoBehaviour
 {
+    [SerializeField] private List<TMP_Text> _playersNames;
+    [SerializeField] private List<TMP_Text> _playersScores;
+    [SerializeField] private PlayerEntry _thisPlayer;
+    [SerializeField] private TMP_Text _thisPlayerScore;
+    [SerializeField] private List<PlayerEntry> _playersEntries;
+
     private int _currentScore;
-    private PlayerEntry _template;
-    private PlayerEntry _thisPlayer;
-    private List<PlayerEntry> _playersEntries = new List<PlayerEntry>();
-    public event Action<PlayerEntry> EntryCreateRequested;
 
-    public LeaderboardModel(PlayerEntry template, PlayerEntry thisPlayer)
-    {   
-        _template = template;
-        _thisPlayer = thisPlayer;
-    }
+    //public LeaderboardModel(PlayerEntry thisPlayer, List<PlayerEntry> entries)
+    //{   
+    //    _playersEntries = entries;
+    //    _thisPlayer = thisPlayer;
+    //}
 
-    public void Start()
-    {   
-        for (int i = 0; i < StaticFields.TopPlayersCount; i++)
-            EntryCreateRequested?.Invoke(_template);       
-    }
-
-    public void AddPlayerEntry(PlayerEntry createdEntry)
+    public void Init()
     {
-        _playersEntries.Add(createdEntry);
-
-        if (_playersEntries.Count == StaticFields.TopPlayersCount)
-            OnEntriesCreated();            
+        LoadPlayerEntry();
+        LoadLeaderBoard();
     }
 
-    private void LoadLeaderBoard() => Leaderboard.GetEntries(StaticFields.Leaderboard, OnGetEntries, null, StaticFields.TopPlayersCount);
-    
-    private void OnGetEntries(LeaderboardGetEntriesResponse result)
-    {
-        for (int i = 0; i < result.entries.Length; i++)
-            _playersEntries[i].Init(result.entries[i]);
-    }
+    private void LoadLeaderBoard() => Leaderboard.GetEntries(StaticFields.Leaderboard, (result) =>
+    {   
+        int entriesCount  = result.entries.Length >= _playersEntries.Count ? _playersEntries.Count : result.entries.Length;
+
+        for (int i = 0; i < entriesCount; i++)
+        {
+            _playersEntries[i].gameObject.SetActive(true);
+            _playersScores[i].text = result.entries[i].score.ToString();
+            string name = result.entries[i].player.publicName;
+            _playersNames[i].text = name;
+            //if (name == null)
+            //    _playersNames[i].text = Lean.Localization.LeanLocalization.GetTranslationText(StaticFields.Anonymous);
+            //else
+            //    _playersNames[i].text = name;
+        }
+    });
 
     private void LoadPlayerEntry()
     {
@@ -44,7 +49,8 @@ public class LeaderboardModel
         {
             _currentScore = UnityEngine.PlayerPrefs.GetInt(StaticFields.BestScore);
             _thisPlayer.gameObject.SetActive(true);
-            _thisPlayer.SetScore(_currentScore.ToString());
+            //_thisPlayer.SetScore(_currentScore);
+            _thisPlayerScore.text = _currentScore.ToString();
             Leaderboard.GetPlayerEntry(StaticFields.Leaderboard, OnGetEntry);
         }
     }
@@ -53,11 +59,5 @@ public class LeaderboardModel
     {
         if (result == null || _currentScore > result.score)
             Leaderboard.SetScore(StaticFields.Leaderboard, _currentScore);
-    }
-
-    private void OnEntriesCreated()
-    {
-        LoadPlayerEntry();
-        LoadLeaderBoard();   
     }
 }

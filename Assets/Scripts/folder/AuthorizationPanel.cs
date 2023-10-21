@@ -31,7 +31,7 @@ public class AuthorizationPanel : MonoBehaviour
         if (UnityEngine.PlayerPrefs.HasKey(StaticFields.Authorization))
             _leaderboard.Init();
         else
-        _animator.Play(StaticFields.ShowAnimation);
+            _animator.Play(StaticFields.ShowAnimation);
     }
     
     public void SetPanelAsActive()

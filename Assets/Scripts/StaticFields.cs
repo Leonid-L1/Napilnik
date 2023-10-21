@@ -8,6 +8,9 @@ public static class StaticFields
     public const float MaxPitch = 1;
     public const float MinPitch = 0.85f;
     public const float DedaultVolume = 0.75f;
+    public const float MaxLinearValue = 1;
+    public const float MinLinearValue = 0.0001f;
+    public const float LogarithmicMultiplicator = 20f;
     public const string SpeedCondition = "Speed";
     public const string StarsCount = "starsCount";
     public const string AttackAnimation = "Attack";
@@ -33,12 +36,12 @@ public static class StaticFields
     public const string TurkishLanguageCode = "tr";
     public const string NoCellComponentMessage = "Gameobjects you put in this List should contain CellView component ";
     public const string NoCubeComponentMessage = "Gameobjects you put in this List should contain CubeView component ";
-    public const string Leaderboard = "Leaderboard";
-    public const string Anonimous = "Anonimous";
+    public const string Leaderboard = "Leaderboard1";
+    public const string Anonymous = "Anonymous";
     public const string BestScore = "BestScore";
     public const string Authorization = "Authorization";
     public const string BonusLevelEducation = "BonusLevelEducation";
-    public const string _emptyPlayerEntryName = "?";
+    public const string EmptyPlayerEntryName = "?";
     public const int emptyPlayerEntryScore = 0;
     public const int emptyPlayerEntryRank = 0;
 }
