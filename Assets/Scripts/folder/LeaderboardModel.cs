@@ -1,16 +1,18 @@
 using UnityEngine;
 using TMPro;
 using Agava.YandexGames;
-using System.Collections.Generic;
+using Agava.YandexGames.Samples;
 using Lean.Localization;
 
 public class LeaderboardModel : MonoBehaviour
 {
-    [SerializeField] private List<TMP_Text> _playersNames;
-    [SerializeField] private List<TMP_Text> _playersScores;
+    private readonly string LeaderboardName = "Leaderboard1";
+
+    [SerializeField] private TMP_Text[] _playersNames;
+    [SerializeField] private TMP_Text[] _playersScores;
+    [SerializeField] private PlayerEntry[] _playersEntries;
     [SerializeField] private PlayerEntry _thisPlayer;
     [SerializeField] private TMP_Text _thisPlayerScore;
-    [SerializeField] private List<PlayerEntry> _playersEntries;
 
     private int _currentScore;
 
@@ -26,20 +28,20 @@ public class LeaderboardModel : MonoBehaviour
         LoadLeaderBoard();
     }
 
-    private void LoadLeaderBoard() => Leaderboard.GetEntries(StaticFields.Leaderboard, (result) =>
+    private void LoadLeaderBoard() => Leaderboard.GetEntries(LeaderboardName, (result) =>
     {   
-        int entriesCount  = result.entries.Length >= _playersEntries.Count ? _playersEntries.Count : result.entries.Length;
+        int entriesCount  = result.entries.Length >= _playersEntries.Length ? _playersEntries.Length : result.entries.Length;
 
         for (int i = 0; i < entriesCount; i++)
         {
             _playersEntries[i].gameObject.SetActive(true);
             _playersScores[i].text = result.entries[i].score.ToString();
             string name = result.entries[i].player.publicName;
-            _playersNames[i].text = name;
-            //if (name == null)
-            //    _playersNames[i].text = Lean.Localization.LeanLocalization.GetTranslationText(StaticFields.Anonymous);
-            //else
-            //    _playersNames[i].text = name;
+
+            if (name == null)
+                _playersNames[i].text = Lean.Localization.LeanLocalization.GetTranslationText(StaticFields.Anonymous);
+            else
+               _playersNames[i].text = name;
         }
     });
 
@@ -49,15 +51,14 @@ public class LeaderboardModel : MonoBehaviour
         {
             _currentScore = UnityEngine.PlayerPrefs.GetInt(StaticFields.BestScore);
             _thisPlayer.gameObject.SetActive(true);
-            //_thisPlayer.SetScore(_currentScore);
             _thisPlayerScore.text = _currentScore.ToString();
-            Leaderboard.GetPlayerEntry(StaticFields.Leaderboard, OnGetEntry);
+            Leaderboard.GetPlayerEntry(LeaderboardName, OnGetEntry);
         }
     }
 
     private void OnGetEntry(LeaderboardEntryResponse result)
     {
         if (result == null || _currentScore > result.score)
-            Leaderboard.SetScore(StaticFields.Leaderboard, _currentScore);
+            Leaderboard.SetScore(LeaderboardName, _currentScore);
     }
 }

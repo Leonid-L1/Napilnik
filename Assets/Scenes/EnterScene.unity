@@ -3344,7 +3344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -349, y: 407234.12}
+  m_AnchoredPosition: {x: -349, y: 490834.12}
   m_SizeDelta: {x: 698, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &167927098
@@ -38786,14 +38786,14 @@ MonoBehaviour:
   - {fileID: 1686343724}
   - {fileID: 411738079}
   - {fileID: 665154023}
-  _thisPlayer: {fileID: 6452319459689333351}
-  _thisPlayerScore: {fileID: 963191861153075527}
   _playersEntries:
   - {fileID: 1805481782}
   - {fileID: 259615406}
   - {fileID: 1686343723}
   - {fileID: 411738078}
   - {fileID: 665154021}
+  _thisPlayer: {fileID: 6452319459689333351}
+  _thisPlayerScore: {fileID: 963191861153075527}
 --- !u!1 &5752114924510193213
 GameObject:
   m_ObjectHideFlags: 0
@@ -38919,7 +38919,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 63.55
+  m_fontSize: 58.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

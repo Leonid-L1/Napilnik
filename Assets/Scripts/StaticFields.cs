@@ -36,7 +36,6 @@ public static class StaticFields
     public const string TurkishLanguageCode = "tr";
     public const string NoCellComponentMessage = "Gameobjects you put in this List should contain CellView component ";
     public const string NoCubeComponentMessage = "Gameobjects you put in this List should contain CubeView component ";
-    public const string Leaderboard = "Leaderboard1";
     public const string Anonymous = "Anonymous";
     public const string BestScore = "BestScore";
     public const string Authorization = "Authorization";
