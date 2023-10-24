@@ -12,13 +12,18 @@ public class LeaderboardPresenter
 
     public void Enable()
     {
-        _enabled = true;      
+        _enabled = true;
+        _model.EntryDataGotten += _view.SetEntry;
+        _model.SelfScoreGotten += _view.SetSelfEntry;
     }
 
     public void Disable()
-    {   
-        if(!_enabled)
+    {
+        if (!_enabled)
             return;
+
+        _model.EntryDataGotten -= _view.SetEntry;
+        _model.SelfScoreGotten -= _view.SetSelfEntry;      
         _enabled = false;
     }
 }

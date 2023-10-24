@@ -11,6 +11,7 @@ public static class StaticFields
     public const float MaxLinearValue = 1;
     public const float MinLinearValue = 0.0001f;
     public const float LogarithmicMultiplicator = 20f;
+    public const string LeaderboardName = "Leaderboard2";
     public const string SpeedCondition = "Speed";
     public const string StarsCount = "starsCount";
     public const string AttackAnimation = "Attack";
@@ -43,8 +44,6 @@ public static class StaticFields
     public const string EmptyPlayerEntryName = "?";
     public const int emptyPlayerEntryScore = 0;
     public const int emptyPlayerEntryRank = 0;
-
-
 }
 
 
