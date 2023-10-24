@@ -44,6 +44,7 @@ public class AuthorizationPanel : MonoBehaviour
 
     private void OnSuccesAuthorization()
     {
+        PlayerAccount.RequestPersonalProfileDataPermission();
         RemovePanel();
         UnityEngine.PlayerPrefs.SetString(StaticFields.Authorization, StaticFields.Authorization);
         _leaderboard.Init();

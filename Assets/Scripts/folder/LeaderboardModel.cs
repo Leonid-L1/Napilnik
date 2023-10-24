@@ -35,7 +35,7 @@ public class LeaderboardModel : MonoBehaviour
         for (int i = 0; i < entriesCount; i++)
         {
             _playersEntries[i].gameObject.SetActive(true);
-            _playersScores[i].text = result.entries[i].score.ToString();
+            _playersScores[i].text = result.entries[i].formattedScore;
             string name = result.entries[i].player.publicName;
 
             if (name == null)

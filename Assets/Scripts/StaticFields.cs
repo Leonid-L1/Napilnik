@@ -43,6 +43,8 @@ public static class StaticFields
     public const string EmptyPlayerEntryName = "?";
     public const int emptyPlayerEntryScore = 0;
     public const int emptyPlayerEntryRank = 0;
+
+
 }
 
 
