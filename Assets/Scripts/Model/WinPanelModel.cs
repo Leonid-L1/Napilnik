@@ -54,9 +54,19 @@ public class WinPanelModel
         ResultCounted?.Invoke(starsCount);
     }
     private void SaveResult(int starsCount)
-    {
-        PlayerPrefs.SetString(_isCompleteKey, StaticFields.IsCompleted);
-        PlayerPrefs.SetInt(_starsCountKey, starsCount);
+    {   
+        if(PlayerPrefs.GetString(_isCompleteKey) == StaticFields.IsCompleted)
+        {
+            if(PlayerPrefs.GetInt(_starsCountKey) < starsCount)
+            {
+                PlayerPrefs.SetInt(_starsCountKey, starsCount);
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetString(_isCompleteKey, StaticFields.IsCompleted);
+            PlayerPrefs.SetInt(_starsCountKey, starsCount);
+        }      
     }
 
     public void LoadNextlevel() => _loader.Load(_nextLevelIndex);

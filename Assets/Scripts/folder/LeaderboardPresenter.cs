@@ -13,6 +13,7 @@ public class LeaderboardPresenter
     public void Enable()
     {
         _enabled = true;
+        _model.PersonalDataRequestComplete += _view.Show;
         _model.EntryDataGotten += _view.SetEntry;
         _model.SelfScoreGotten += _view.SetSelfEntry;
     }
@@ -22,8 +23,9 @@ public class LeaderboardPresenter
         if (!_enabled)
             return;
 
+        _model.PersonalDataRequestComplete += _view.Show;
         _model.EntryDataGotten -= _view.SetEntry;
-        _model.SelfScoreGotten -= _view.SetSelfEntry;      
+        _model.SelfScoreGotten -= _view.SetSelfEntry;
         _enabled = false;
     }
 }

@@ -31,13 +31,14 @@ public class LevelView : MonoBehaviour
         if (isUnlocked)
         {
             _lockImage.enabled = false;
+
             if (_levelNumber != null)
                 _levelNumber.gameObject.SetActive(true);
         }
-
         else
         {
             _lockImage.enabled = true;
+
             if (_levelNumber != null)
                 _levelNumber.gameObject.SetActive(false);
         }

@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using TMPro;
 using Agava.YandexGames;
 using Agava.YandexGames.Samples;
 using Lean.Localization;
@@ -9,27 +8,40 @@ public class LeaderboardModel
 {
     private int _currentScore;
 
+    public event Action PersonalDataRequestComplete;
     public event Action<string, int, int> EntryDataGotten;
     public event Action<int> SelfScoreGotten;
 
-    public void Init()
+    public void Init() => PlayerAccount.RequestPersonalProfileDataPermission(OnPersonalDataGetSuccess, OnPersonalDataGetError);
+
+    private void OnPersonalDataGetSuccess()
     {
+        PersonalDataRequestComplete?.Invoke();
         LoadPlayerEntry();
         LoadLeaderBoard();
     }
 
+    private void OnPersonalDataGetError(string errorMessage)
+    {
+        PlayerAccount.RequestPersonalProfileDataPermission(OnPersonalDataGetSuccess, OnPersonalDataGetError);
+    }
+
     private void LoadLeaderBoard() => Leaderboard.GetEntries(StaticFields.LeaderboardName, (result) =>
-    {   
-        int entriesCount  = result.entries.Length >= StaticFields.TopPlayersCount ? StaticFields.TopPlayersCount : result.entries.Length;
+    {
+        int entriesCount = result.entries.Length >= StaticFields.TopPlayersCount ? StaticFields.TopPlayersCount : result.entries.Length;
 
         for (int i = 0; i < entriesCount; i++)
         {
             string name = result.entries[i].player.publicName;
- 
-            if (name == null)
-                name = Lean.Localization.LeanLocalization.GetTranslationText(StaticFields.Anonymous);
+            Debug.Log(name);
 
-            EntryDataGotten?.Invoke(name, result.entries[i].score,i);
+            if (string.IsNullOrEmpty(name))
+            {
+                name = Lean.Localization.LeanLocalization.GetTranslationText(StaticFields.Anonymous);
+                Debug.Log("Аноним, перевод - " + name);
+            }   
+            
+            EntryDataGotten?.Invoke(name, result.entries[i].score, i);
         }
     });
 
@@ -48,4 +60,12 @@ public class LeaderboardModel
         if (result == null || _currentScore > result.score)
             Leaderboard.SetScore(StaticFields.LeaderboardName, _currentScore);
     }
+
+    private string TranslateAnonymous()
+    {
+      // string currentLanguage = Lean.Localization.LeanLocalization.CurrentLanguages();
+        return String.Empty;
+    }
 }
+
+

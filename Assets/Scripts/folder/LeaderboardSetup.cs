@@ -27,7 +27,6 @@ public class LeaderboardSetup : MonoBehaviour
         _model = new LeaderboardModel();
         _presenter = new LeaderboardPresenter(_view, _model);
         _presenter.Enable();
-        _view.Show();
         _model.Init();
 
         _isInited = true;
