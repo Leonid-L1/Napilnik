@@ -12266,6 +12266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _masterMixer: {fileID: 24100000, guid: 78ae864c59583c34491cfe6df976537e, type: 2}
+  _loadingScreen: {fileID: 20249375}
 --- !u!1001 &983885811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40141,7 +40142,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90.4
+  m_fontSize: 84.15
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1

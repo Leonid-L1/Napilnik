@@ -25,6 +25,7 @@ public class YandexInit : MonoBehaviour
 
     private void OnSuccessCallback()
     {
+        YandexGamesSdk.GameReady();
         _settingsPanelSetup.Init(YandexGamesSdk.Environment.i18n.lang);
         _loadingScreen.gameObject.SetActive(false);
     }

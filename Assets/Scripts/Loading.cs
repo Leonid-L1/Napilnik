@@ -1,14 +1,18 @@
+using System;
 using System.Collections;
-using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Agava.YandexGames;
 using Agava.YandexGames.Samples;
-
 
 public class Loading : MonoBehaviour
 {
     [SerializeField] private GameObject _loadingScreen;
     [SerializeField] private bool ShowAdvertising = false;
+    [SerializeField] private FocusController _focusController;
+
+    public event Action AdOpened;
+    public event Action AdClosed;
 
     private float _additionalDelay = 1.2f;
     
@@ -18,13 +22,17 @@ public class Loading : MonoBehaviour
         StartCoroutine(LoadAsync(sceneIndex));
 
 #if UNITY_WEBGL && !UNITY_EDITOR
-        if(ShowAdvertising)
-            InterstitialAd.Show();
+        if (ShowAdvertising)
+            InterstitialAd.Show(OnOpenCallback,OnCloseCallback);
 #endif
     }
 
+    private void OnOpenCallback() => AdOpened?.Invoke();
+    
+    private void OnCloseCallback(bool isCLosed) => AdClosed?.Invoke();    
+
     private IEnumerator LoadAsync(int sceneIndex)
-    {
+    {        
         AsyncOperation loadAsync = SceneManager.LoadSceneAsync(sceneIndex);
         loadAsync.allowSceneActivation = false;
 
