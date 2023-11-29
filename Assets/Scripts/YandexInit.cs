@@ -1,14 +1,18 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Agava.YandexGames;
 using Agava.YandexGames.Samples;
 
-public class YandexInit : MonoBehaviour
+public sealed class YandexInit : MonoBehaviour
 {
-    [SerializeField] private Loading _loadingScreen;
-    [SerializeField] private SettingsPanelSetup _settingsPanelSetup;
+    #if UNITY_WEBGL && !UNITY_EDITOR
 
-#if UNITY_WEBGL && !UNITY_EDITOR
+    private void Awake()
+    {
+        YandexGamesSdk.CallbackLogging = true;       
+    }
+
     private IEnumerator Start()
     {
         yield return YandexGamesSdk.Initialize(OnSuccessCallback);
@@ -18,15 +22,13 @@ public class YandexInit : MonoBehaviour
 #if UNITY_EDITOR
     private void Start()
     {   
-        _settingsPanelSetup.Init(StaticFields.RussianLanguageCode);
-        _loadingScreen.gameObject.SetActive(false);
+        SceneManager.LoadScene(StaticFields.EnterLevelSceneIndex);
     }
 #endif
 
     private void OnSuccessCallback()
     {
-        YandexGamesSdk.GameReady();
-        _settingsPanelSetup.Init(YandexGamesSdk.Environment.i18n.lang);
-        _loadingScreen.gameObject.SetActive(false);
+        YandexGamesSdk.GameReady(); 
+        SceneManager.LoadScene(StaticFields.EnterLevelSceneIndex);
     }
 }

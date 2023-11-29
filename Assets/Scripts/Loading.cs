@@ -2,48 +2,67 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 using Agava.YandexGames;
 using Agava.YandexGames.Samples;
 
 public class Loading : MonoBehaviour
 {
+    [SerializeField] private AudioMixer _masterMixer;
     [SerializeField] private GameObject _loadingScreen;
     [SerializeField] private bool ShowAdvertising = false;
-    [SerializeField] private FocusController _focusController;
 
-    public event Action AdOpened;
-    public event Action AdClosed;
+    private int _nextLevelIndex;
 
-    private float _additionalDelay = 1.2f;
-    
+    private float _additionalDelay = 1f;
+
+    public event Action<Panel> AdOpened;
+    public event Action<Panel> AdClosed;
+
     public void Load(int sceneIndex)
-    {
-        _loadingScreen.SetActive(true);
-        StartCoroutine(LoadAsync(sceneIndex));
+    {   
+        gameObject.SetActive(true);
+        _nextLevelIndex = sceneIndex;
 
 #if UNITY_WEBGL && !UNITY_EDITOR
         if (ShowAdvertising)
-            InterstitialAd.Show(OnOpenCallback,OnCloseCallback);
+        {   
+            InterstitialAd.Show(OnAdOpened, OnAdClosed);
+            OnAdOpened();
+        }
+        else
+        {   
+            StartCoroutine(LoadNextLevelAsync());
+        }
+            
+#endif
+
+#if UNITY_EDITOR
+        StartCoroutine(LoadNextLevelAsync());
 #endif
     }
 
-    private void OnOpenCallback() => AdOpened?.Invoke();
-    
-    private void OnCloseCallback(bool isCLosed) => AdClosed?.Invoke();    
-
-    private IEnumerator LoadAsync(int sceneIndex)
-    {        
-        AsyncOperation loadAsync = SceneManager.LoadSceneAsync(sceneIndex);
+    private IEnumerator LoadNextLevelAsync()
+    {   
+        AsyncOperation loadAsync = SceneManager.LoadSceneAsync(_nextLevelIndex);
         loadAsync.allowSceneActivation = false;
 
-        while(!loadAsync.isDone)
+        while (!loadAsync.isDone)
         {
-            if(loadAsync.progress >= 0.9f && !loadAsync.allowSceneActivation)
+            if (loadAsync.progress >= 0.9f && !loadAsync.allowSceneActivation)
             {
                 yield return new WaitForSeconds(_additionalDelay);
                 loadAsync.allowSceneActivation = true;
             }
             yield return null;
         }
+    }
+
+    private void OnAdOpened() => AdOpened?.Invoke(null);
+
+    private void OnAdClosed(bool isClosed)
+    {
+        AdClosed?.Invoke(null);
+        StartCoroutine(LoadNextLevelAsync());
     }
 }
